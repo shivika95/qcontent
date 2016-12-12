@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Cache-control" content="no-store">
+    <title> Qlive </title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link href="app-content/app.css" rel="stylesheet"/>
+    <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+    <!-- <script type="text/javascript" src="bower_components/pjTextToSpeech/pjTextToSpeech.min.js"></script>-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- <script src="http://code.responsivevoice.org/responsivevoice.js"></script>-->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }"
+     ng-if="flash" ng-bind="flash.message">
+</div>
+<div ng-view class="ng-scope">
+
+</div>
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+<script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
+<script src="app.js"></script>
+
+<script src="app-services/authentication.service.js"></script>
+<script src="app-services/flash.service.js"></script>
+<!-- Real user service that uses an api -->
+<script src="app-services/user.service.js"></script>
+<!-- Fake user service for demo that uses local storage -->
+<script src="app-services/user.service.local-storage.js"></script>
+
+<script src="home/home.controller.js"></script>
+
+</body>
+</html>

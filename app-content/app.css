@@ -1,0 +1,154 @@
+body{
+	background: #ffffff;
+
+	font-size : 30px!important;	
+	
+}
+
+
+.selected{
+  color: #0ee500;
+  -moz-animation-duration: 500ms;
+  -moz-animation-name: blink;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-name: blink;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  
+  animation-duration: 500ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@-moz-keyframes blink {
+  from {
+    opacity: 1;
+    color: #0ee500;
+  }
+  
+  to {
+    opacity: 1;
+    color: #631cd9;
+  }
+}
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 1;
+    color: #0ee500;
+  }
+  
+  to {
+    opacity: 1;
+     color: #631cd9;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+    color: #0ee500;
+
+  }
+  
+  to {
+    opacity: 1;
+     color: #631cd9;
+  }
+}
+
+.navbar-centered {
+        position: absolute;
+        left: 30%;
+        display: block;
+        width: 400px;
+        text-align: center;
+        
+    }
+
+ a {
+  color: #ffffff !important;
+ }   
+
+table, th, td {
+    border: 1px solid black !important;
+}
+.navbar>.container .navbar-centered, 
+.navbar>.navbar-centered {
+      
+      margin-left: 130px;
+    }
+
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-top: 0!important;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+
+
+
+h1,h2,h3,h4,h5
+{ 
+font-weight: 700;
+}
+
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+.close-image {
+    cursor: pointer;
+    display: block;
+    float: right;  
+    z-index: 3;
+    position: absolute; /*newly added*/
+    right: 5px; /*newly added*/
+    top: 5px;/*newly added*/
+}
+
+.stuff-to-show {
+    position: relative;
+    height: 100px;
+    -webkit-transition:top linear 1.5s;
+    transition:top linear 1.5s;
+    top: 0;
+}
+
+.stuff-to-show.ng-hide {
+	top: -100px;
+}
+
+.stuff-to-show.ng-hide-add, .stuff-to-show.ng-hide-remove {
+	display:block!important;
+}

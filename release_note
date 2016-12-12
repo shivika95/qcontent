@@ -1,0 +1,28 @@
+Release No/Name: release 1.0
+
+Release Description:
+
+Date Of Release: 19.08.2016
+Third party Frameworks -
+	1.Deployed on Heroku
+	2. jquery
+	3. boostarp
+	4. angularJs
+
+Release Content -
+ Included Features:
+
+1 :Support multi Doctors and multi Device Both
+
+2 :Addvertisment Display According to their Time iNterval
+
+3 :Breaking News without audio .
+
+4 :Doctor Disable Feature when Doctor is Disconnected
+
+Known Issues :
+   1: Audio Is not properly working on Disconnetion  of device nor  on breaking News
+
+   2:  Advertisement Stats Not iNcluded
+
+   3: when doc is connected and Doc Queue Is empty it is Show Nothing blank Doc queue .

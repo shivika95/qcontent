@@ -1,0 +1,40 @@
+{
+  "advtTime": 10,
+  "docTime": 20,
+  "flashTime": 10,
+  "attentionColor": "white",
+  "ParameterPerDoc": 0,
+  "fontSize": 38,
+  "flash-color": "#0092cb",
+  "defaultads": [
+
+     
+    {
+      "adId": "Ski_Clinic_AD_1",
+      "adPriority": "LOW",
+      "adName": "Ski_Clinic_AD_1",
+      "adUrl": "images/Ski_Clinic_Ad01.png",
+      "adMimeType": "image/png",
+      "adTime": "10",
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+    }
+    
+  ],
+  "knowndoctors": [
+    
+    {
+      "doctorName": "Amit NAth Misra",
+      "_id": "5497c67be4b0ae1169ec2745",
+      "heading_background_color": "#0000ff",
+      "flash_color": "#151172"
+    }
+  ],
+  "connection_issue_collection": "qliveconnection",
+  "ad_count_collection": "qliveadcount",
+  "ip_for_logs": "52.76.159.84",
+  "port_for_logs": 8091
+}
