@@ -28,6 +28,11 @@ var app = angular.module('app')
 
             $scope.advertisements = [];
             $scope.advertisement = {};
+	    $scope.state={
+		"advertisement":false,
+		"queue":false,
+		"flash":false
+	    }
 
             $scope.doctors = [];
             $scope.doctor = {};
