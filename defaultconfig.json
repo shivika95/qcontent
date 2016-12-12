@@ -26,7 +26,7 @@
       "adId": "VIDEO_TEST",
       "adPriority": "LOW",
       "adName": "VIDEO_TEST",
-      "adUrl": "https://www.youtube.com/embed/_zK0iPJeC3s?enablejsapi=1&widgetid=1",
+      "adUrl": "https://www.youtube.com/embed/_zK0iPJeC3s?enablejsapi=1&widgetid=1&autoplay=1",
       "adMimeType": "video/youtube",
       "adTime": "50",
       "adCount": "Infinity",
