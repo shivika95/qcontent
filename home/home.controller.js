@@ -683,6 +683,7 @@ var app = angular.module('app')
                     $scope.advertisements[i].show = false;
 		    $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
 		    if($scope.advertisements[i].adMimeType==="video/youtube"){
+				console.log('found a youtube video')
 				var player=new YT.Player( $scope.advertisements[i].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
 		    }
                     if (i === 0)
