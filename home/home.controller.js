@@ -23,8 +23,8 @@ var app = angular.module('app')
             }
         }
     })
-    .controller('HomeController', ['audio', 'CastReceiver', 'UserService', 'AuthenticationService', '$rootScope', '$scope', '$http', '$timeout','$sce','YT'],
-        function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout,$sce,YT) {
+    .controller('HomeController', ['audio', 'CastReceiver', 'UserService', 'AuthenticationService', '$rootScope', '$scope', '$http', '$timeout','$sce',
+        function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout,$sce) {
 
             $scope.advertisements = [];
             $scope.advertisement = {};
@@ -660,7 +660,7 @@ var app = angular.module('app')
                     countDown();
                 }, 1000);
             }
-	    function onPlayerReady(event) {
+	    /*function onPlayerReady(event) {
 			for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
 				if($scope.advertisements[ad_no].adId===event.target.a.id){
 					$scope.advertisements[ad_no].player=event.target
@@ -671,7 +671,7 @@ var app = angular.module('app')
 	    function onPlayerStateChange(event) {
 			console.log("event is "+event.data)
 			//console.log("available events are "+JSON.stringify(YT.PlayerState))
-      	    }
+      	    }*/
 
             $http.get('../defaultconfig.json').success(function (data) {
                 //when you get success reset the advertisement
