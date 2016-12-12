@@ -23,7 +23,7 @@ var app = angular.module('app')
             }
         }
     })
-    .controller('HomeController', ['audio', 'CastReceiver', 'UserService', 'AuthenticationService', '$rootScope', '$scope', '$http', '$timeout',
+    .controller('HomeController', ['audio', 'CastReceiver', 'UserService', 'AuthenticationService', '$rootScope', '$scope', '$http', '$timeout','$sce',
         function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout) {
 
             $scope.advertisements = [];
@@ -330,6 +330,7 @@ var app = angular.module('app')
                                     }
                                 }
                                 if (!ad_already_present) {
+				    $scope.advertisements_newly_added[j].adUrl=$sce.trustAsResourceUrl($scope.advertisements_newly_added[j].adUrl)
                                     $scope.advertisements.push($scope.advertisements_newly_added[j]);
                                 }
                             }
@@ -667,6 +668,7 @@ var app = angular.module('app')
                 $scope.advertisements = data.defaultads;
                 for (var i = $scope.advertisements.length - 1; i >= 0; i--) {
                     $scope.advertisements[i].show = false;
+		    $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
                     if (i === 0)
                         $scope.advertisements[i].show = true;
                 }
