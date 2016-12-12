@@ -572,6 +572,9 @@ var app = angular.module('app')
                     $scope.flashQueue.push(received_flash_msg);
                 }
             }
+	    $scope.attachPlayer=function (){
+		console.log('element created need to attach player')
+	    }
 
 
             function showFlash(flashindex) {
