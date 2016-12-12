@@ -662,11 +662,11 @@ var app = angular.module('app')
                     if ($scope.counter === 0) {
                         nextAd();
                         showAdv();
-                    } else if ($scope.counter === 10) {
+                    } else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
                         prevIndex = 0;
                         nextDoc();
                         showDoc();
-                    } else if ($scope.counter === 30) {
+                    } else if ($scope.counter === $scope.advertisement.adTime?$scope.advertisement.adTime:30) {
                         $scope.counter = -1;
                     }
                     $scope.counter += 1;
