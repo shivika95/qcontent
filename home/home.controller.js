@@ -408,6 +408,15 @@ var app = angular.module('app')
             function showDoc() {
 
                 $scope.advertisements[currentIndexForAd].show = false;
+		if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube"){
+				//console.log('found a youtube video')
+				//console.log(document)
+				//var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+				if($scope.advertisements[currentIndexForAd].player){
+					$scope.advertisements[currentIndexForAd].player.pauseVideo()
+					$scope.advertisements[currentIndexForAd].player.seekTo(0)
+				}
+		}
 
                 $scope.doctor = {};
                 $scope.doctor = $scope.doctors[currentIndexForDoc];
