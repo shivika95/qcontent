@@ -681,7 +681,7 @@ var app = angular.module('app')
                     $scope.advertisements[i].show = false;
 		    $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
 		    if($scope.advertisements[i].adMimeType==="video/youtube"){
-				player=new YT.Player( $scope.advertisements[i].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+				var player=new YT.Player( $scope.advertisements[i].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
 		    }
                     if (i === 0)
                         $scope.advertisements[i].show = true;
