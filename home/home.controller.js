@@ -23,8 +23,8 @@ var app = angular.module('app')
             }
         }
     })
-    .controller('HomeController', ['audio', 'CastReceiver', 'UserService', 'AuthenticationService', '$rootScope', '$scope', '$http', '$timeout','$sce',
-        function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout,$sce) {
+    .controller('HomeController', ['audio', 'CastReceiver', 'UserService', 'AuthenticationService', '$rootScope', '$scope', '$http', '$timeout','$sce',YT
+        function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout,$sce,YT) {
 
             $scope.advertisements = [];
             $scope.advertisement = {};
@@ -660,7 +660,18 @@ var app = angular.module('app')
                     countDown();
                 }, 1000);
             }
-
+	    function onPlayerReady(event) {
+			for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
+				if($scope.advertisements[ad_no].adId===event.target.a.id){
+					$scope.advertisements[ad_no].player=event.target
+					break
+				}
+			}
+	    }
+	    function onPlayerStateChange(event) {
+			console.log("event is "+event.data)
+			//console.log("available events are "+JSON.stringify(YT.PlayerState))
+      	    }
 
             $http.get('../defaultconfig.json').success(function (data) {
                 //when you get success reset the advertisement
@@ -669,6 +680,9 @@ var app = angular.module('app')
                 for (var i = $scope.advertisements.length - 1; i >= 0; i--) {
                     $scope.advertisements[i].show = false;
 		    $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
+		    if($scope.advertisements[i].adMimeType==="video/youtube"){
+				player=new YT.Player( $scope.advertisements[i].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+		    }
                     if (i === 0)
                         $scope.advertisements[i].show = true;
                 }
