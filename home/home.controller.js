@@ -661,7 +661,7 @@ var app = angular.module('app')
                 }, 1000);
             }
 	    function onPlayerReady(event) {
-			
+			event.target.playVideo()
 			for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
 				if($scope.advertisements[ad_no].adId===event.target.a.id){
 					console.log('player binded')
