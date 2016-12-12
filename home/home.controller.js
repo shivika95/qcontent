@@ -24,7 +24,7 @@ var app = angular.module('app')
         }
     })
     .controller('HomeController', ['audio', 'CastReceiver', 'UserService', 'AuthenticationService', '$rootScope', '$scope', '$http', '$timeout','$sce',
-        function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout) {
+        function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout,$sce) {
 
             $scope.advertisements = [];
             $scope.advertisement = {};
