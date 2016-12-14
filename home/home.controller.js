@@ -632,10 +632,10 @@ var app = angular.module('app')
                     $scope.flashQueue = [];
                     $scope.insideflash = false;
                     $timeout(function () {
-                        if ($scope.counter <= 10)
+                        if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10))
                             showAdv();
 
-                        else if ($scope.counter <= 30) {
+                        else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
                             showDoc();
                         }
@@ -689,7 +689,13 @@ var app = angular.module('app')
 			for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
 				if($scope.advertisements[ad_no].adId===event.target.a.id){
 					console.log('player binded')
+					if($scope.advertisements[ad_no].adTime===-1){
+						$scope.advertisements[ad_no].adTime==event.target.getDuration()
+					}
 					$scope.advertisements[ad_no].player=event.target
+					$scope.advertisements[ad_no].player.playVideo()
+					$scope.advertisements[ad_no].player.pauseVideo()
+					console.log(scope.advertisements[ad_no].player)
 					break
 				}
 			}
