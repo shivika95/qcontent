@@ -13,11 +13,11 @@
     <div ng-show="advertisement.show" ng-repeat="advertisement in advertisements">
 
 
-        <iframe class="img-responsive "  ng-src="{{advertisement.adUrl}}" id="{{advertisement.adId}}" onload="attachPlayer()"
+        <iframe class="img-responsive "  ng-src="{{advertisement.adUrl}}" id="{{advertisement.adId}}"
              style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>
     </div>
     </div>
-    <div ng-show="{{flashVisible}}" >
+    <div ng-show="flashVisible" >
         <div class=" container" style="width:50% !important; margin-left:24%;margin-top:5%">
 
             <p class="text-center"
