@@ -695,7 +695,7 @@ var app = angular.module('app')
 					$scope.advertisements[ad_no].player=event.target
 					$scope.advertisements[ad_no].player.playVideo()
 					$scope.advertisements[ad_no].player.pauseVideo()
-					console.log(scope.advertisements[ad_no].player)
+					console.log($scope.advertisements[ad_no].player)
 					break
 				}
 			}
