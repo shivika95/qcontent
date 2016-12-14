@@ -15,7 +15,7 @@
       "adName": "Ski_Clinic_AD_1",
       "adUrl": "images/Ski_Clinic_Ad01.png",
       "adMimeType": "image/png",
-      "adTime": "10",
+      "adTime": 10,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,

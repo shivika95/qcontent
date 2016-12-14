@@ -15,7 +15,7 @@
       "adName": "Amicare_AD_1",
       "adUrl": "images/amicareHimanshu.png",
       "adMimeType": "image/png",
-      "adTime": "10",
+      "adTime": 10,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
