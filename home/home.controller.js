@@ -693,9 +693,9 @@ var app = angular.module('app')
 						$scope.advertisements[ad_no].adTime==event.target.getDuration()
 					}
 					$scope.advertisements[ad_no].player=event.target
-					$scope.advertisements[ad_no].player.playVideo()
-					$scope.advertisements[ad_no].player.pauseVideo()
-					console.log($scope.advertisements[ad_no].player)
+					//$scope.advertisements[ad_no].player.playVideo()
+					//$scope.advertisements[ad_no].player.pauseVideo()
+					//console.log($scope.advertisements[ad_no].player)
 					break
 				}
 			}
