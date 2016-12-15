@@ -34,7 +34,7 @@ var app = angular.module('app')
 		},
 		show:false
 	    }
-            player=new YT.Player( "youtube_advertisement_player",{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+            var player=new YT.Player( "youtube_advertisement_player",{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
