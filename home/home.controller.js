@@ -752,7 +752,7 @@ var app = angular.module('app')
                 //when you get success reset the advertisement
                 $scope.defconfig = data;
                 $scope.advertisements = data.defaultads;
-		$scope.apply()
+		$scope.$apply()
                 for (var i = $scope.advertisements.length - 1; i >= 0; i--) {
                     $scope.advertisements[i].show = false;
 		    $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
