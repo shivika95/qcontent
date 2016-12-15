@@ -524,7 +524,13 @@ var app = angular.module('app')
 		    if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player === undefined){
 				console.log('found a youtube video')
 				console.log(document)
-				var player=new YT.Player( "youtube_advertisement_player",{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+				var player=new YT.Player( "youtube_advertisement_player",{
+												videoId: $scope.advertisements[currentIndexForAd].adUrl,
+												events:{
+													'onReady':onPlayerReady,
+													'onStateChange':onPlayerStateChange
+													}
+											});
 				nextAd();
                     		showAdv();
                     		return;
@@ -534,7 +540,8 @@ var app = angular.module('app')
 				/*if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
 					$scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
 				}*/
-				$scope.youtube_advertisement_player.player.playVideo()
+				$scope.youtube_advertisement_player.player.loadVideoById($scope.advertisements[currentIndexForAd].adUrl)
+				//$scope.youtube_advertisement_player.player.playVideo()
 				$scope.youtube_advertisement_player.show=true
 		    }
                     $scope.docVisible = false;
