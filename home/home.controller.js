@@ -518,7 +518,7 @@ var app = angular.module('app')
 		    if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player === undefined){
 				console.log('found a youtube video')
 				console.log(document)
-				//var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+				var player=new YT.Player( "youtube_advertisement_player",{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
 				nextAd();
                     		showAdv();
                     		return;
