@@ -36,51 +36,6 @@
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
-    },
-    {
-      "adId": "VIDEO_TEST_1",
-      "adPriority": "LOW",
-      "adName": "VIDEO_TEST_1",
-      "adUrl": "https://www.youtube.com/embed/wcPJSgpepWU?enablejsapi=1&widgetid=2",
-      "adMimeType": "video/youtube",
-      "adStartTime":0,
-      "adEndTime":-1,
-      "adTime": 30,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
-    {
-      "adId": "VIDEO_TEST_2",
-      "adPriority": "LOW",
-      "adName": "VIDEO_TEST_2",
-      "adUrl": "https://www.youtube.com/embed/wOreIB4GYr4?enablejsapi=1&widgetid=3",
-      "adMimeType": "video/youtube",
-      "adStartTime":0,
-      "adEndTime":-1,
-      "adTime": -1,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
-    {
-      "adId": "VIDEO_TEST_3",
-      "adPriority": "LOW",
-      "adName": "VIDEO_TEST_3",
-      "adUrl": "https://www.youtube.com/embed/tTz2QsUxmz8?enablejsapi=1&widgetid=1",
-      "adMimeType": "video/youtube",
-      "adStartTime":0,
-      "adEndTime":-1,
-      "adTime": -1,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
     }
     
 
