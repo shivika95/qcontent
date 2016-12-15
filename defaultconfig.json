@@ -7,51 +7,6 @@
   "fontSize": 38,
   "flash-color": "#0092cb",
   "defaultads": [
-
-
-    {
-      "adId": "QORQL_AD_2",
-      "adPriority": "LOW",
-      "adName": "QORQL_AD_2",
-      "adUrl": "images/qorql-ads-03.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
-   {
-      "adId": "VIDEO_TEST_0",
-      "adPriority": "LOW",
-      "adName": "VIDEO_TEST_0",
-      "adUrl": "https://www.youtube.com/embed/_zK0iPJeC3s?enablejsapi=1&widgetid=1",
-      "adMimeType": "video/youtube",
-      "adStartTime":0,
-      "adEndTime":-1,
-      "adTime": 50,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
-    {
-      "adId": "VIDEO_TEST_1",
-      "adPriority": "LOW",
-      "adName": "VIDEO_TEST_1",
-      "adUrl": "https://www.youtube.com/embed/wcPJSgpepWU?enablejsapi=1&widgetid=2",
-      "adMimeType": "video/youtube",
-      "adStartTime":0,
-      "adEndTime":-1,
-      "adTime": 30,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
     {
       "adId": "VIDEO_TEST_2",
       "adPriority": "LOW",
