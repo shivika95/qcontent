@@ -506,21 +506,26 @@ var app = angular.module('app')
                 }
 
                 else {
-                    $scope.docVisible = false;
-                    $scope.flashVisible = false;
-                    $scope.advVisible = true;
-                    $scope.advertisements[currentIndexForAd].show = true;
-                    $scope.advertisements[currentIndexForAd].lastDisplayed = curr_time_millis;
 		    if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.advertisements[currentIndexForAd].player === undefined){
 				console.log('found a youtube video')
 				console.log(document)
 				var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+				nextAd();
+                    		showAdv();
+                    		return;
+				
 		    }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.advertisements[currentIndexForAd].player){
 				/*if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
 					$scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
 				}*/
 				$scope.advertisements[currentIndexForAd].player.playVideo()
 		    }
+                    $scope.docVisible = false;
+                    $scope.flashVisible = false;
+                    $scope.advVisible = true;
+                    $scope.advertisements[currentIndexForAd].show = true;
+                    $scope.advertisements[currentIndexForAd].lastDisplayed = curr_time_millis;
+		    
                 }
 
 
@@ -708,7 +713,7 @@ var app = angular.module('app')
                 }, 1000);
             }
 	    function onPlayerReady(event) {
-			event.target.playVideo()
+			//event.target.playVideo()
 			for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
 				if($scope.advertisements[ad_no].adId===event.target.a.id){
 					console.log('player binded')
@@ -718,7 +723,7 @@ var app = angular.module('app')
 					$scope.advertisements[ad_no].player=event.target
 					$scope.advertisements[ad_no].player.playVideo()
 					$scope.advertisements[ad_no].player.pauseVideo()
-					console.log($scope.advertisements[ad_no].player.get)
+					console.log($scope.advertisements[ad_no].player.getVideoFractionLoaded())
 					break
 				}
 			}
@@ -742,11 +747,11 @@ var app = angular.module('app')
                 for (var i = $scope.advertisements.length - 1; i >= 0; i--) {
                     $scope.advertisements[i].show = false;
 		    $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
-		    if($scope.advertisements[i].adMimeType==="video/youtube"){
+		    /*if($scope.advertisements[i].adMimeType==="video/youtube"){
 				console.log('found a youtube video')
 				console.log(document)
 				var player=new YT.Player( $scope.advertisements[i].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
-		    }
+		    }*/
                     if (i === 0)
                         $scope.advertisements[i].show = true;
                 }
