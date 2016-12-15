@@ -34,7 +34,7 @@ var app = angular.module('app')
 		},
 		show:false
 	    }
-            
+            player=new YT.Player( "youtube_advertisement_player",{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
@@ -415,14 +415,15 @@ var app = angular.module('app')
 
             function showDoc() {
 
-                $scope.advertisements[currentIndexForAd].show = false;
+                
 		if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube"){
+				$scope.youtube_advertisement_player.show = false;
 				//console.log('found a youtube video')
 				//console.log(document)
 				//var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
 				if($scope.advertisements[currentIndexForAd].player){
-					$scope.advertisements[currentIndexForAd].player.pauseVideo()
-					$scope.advertisements[currentIndexForAd].player.seekTo(0)
+					$scope.youtube_advertisement_player.player.pauseVideo()
+					$scope.youtube_advertisement_player.player.seekTo(0)
 				}
 		}
 
@@ -514,19 +515,21 @@ var app = angular.module('app')
                 }
 
                 else {
-		    if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.advertisements[currentIndexForAd].player === undefined){
+		    if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player === undefined){
 				console.log('found a youtube video')
 				console.log(document)
-				var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
-				//nextAd();
-                    		//showAdv();
-                    		//return;
+				//var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+				nextAd();
+                    		showAdv();
+                    		return;
 				
-		    }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.advertisements[currentIndexForAd].player){
+		    }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player){
+				$scope.youtube_advertisement_player.player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
 				/*if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
 					$scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
 				}*/
-				$scope.advertisements[currentIndexForAd].player.playVideo()
+				$scope.youtube_advertisement_player.player.playVideo()
+				$scope.youtube_advertisement_player.show=true
 		    }
                     $scope.docVisible = false;
                     $scope.flashVisible = false;
@@ -721,8 +724,9 @@ var app = angular.module('app')
                 }, 1000);
             }
 	    function onPlayerReady(event) {
+			$scope.youtube_advertisement_player.player=event.target
 			//event.target.playVideo()
-			for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
+			/*for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
 				if($scope.advertisements[ad_no].adId===event.target.a.id){
 					console.log('player binded')
 					if($scope.advertisements[ad_no].adTime===-1){
@@ -738,7 +742,7 @@ var app = angular.module('app')
 					console.log("video loaded fraction is"+$scope.advertisements[ad_no].player.getVideoLoadedFraction())
 					break
 				}
-			}
+			}*/
 	    }
 	    function onPlayerStateChange(event) {
 			console.log("event is "+event.data)
@@ -759,11 +763,11 @@ var app = angular.module('app')
                 for (var i = $scope.advertisements.length - 1; i >= 0; i--) {
                     $scope.advertisements[i].show = false;
 		    $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
-		    if($scope.advertisements[i].adMimeType==="video/youtube"){
+		    /*if($scope.advertisements[i].adMimeType==="video/youtube"){
 				console.log('found a youtube video')
 				console.log(document)
 				var player=new YT.Player( $scope.advertisements[i].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
-		    }
+		    }*/
                     if (i === 0)
                         $scope.advertisements[i].show = true;
                 }
