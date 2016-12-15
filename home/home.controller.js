@@ -729,7 +729,7 @@ var app = angular.module('app')
 					}
 					$scope.advertisements[ad_no].player=event.target
 					console.log("advertisement url is : "+$scope.advertisements[ad_no].adUrl)
-					$scope.advertisements[ad_no].player.loadVideoById($scope.advertisements[ad_no].adUrl)
+					$scope.advertisements[ad_no].player.loadVideoByUrl($scope.advertisements[ad_no].adUrl)
 					//$scope.advertisements[ad_no].player.playVideo()
 					$scope.advertisements[ad_no].player.pauseVideo()
 					console.log("video loaded fraction is"+$scope.advertisements[ad_no].player.getVideoLoadedFraction())
