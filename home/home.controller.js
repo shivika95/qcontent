@@ -27,6 +27,13 @@ var app = angular.module('app')
         function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout,$sce) {
 
             $scope.advertisements = [];
+	    $scope.player={
+		advertisement:{
+			adUrl:"",
+			adMimeType:""
+		},
+		show:false
+	    }
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
@@ -721,9 +728,10 @@ var app = angular.module('app')
 						$scope.advertisements[ad_no].adTime==event.target.getDuration()
 					}
 					$scope.advertisements[ad_no].player=event.target
-					$scope.advertisements[ad_no].player.playVideo()
+					$scope.advertisements[ad_no].player.loadVideoById($scope.advertisements[ad_no].adUrl)
+					//$scope.advertisements[ad_no].player.playVideo()
 					$scope.advertisements[ad_no].player.pauseVideo()
-					console.log($scope.advertisements[ad_no].player.getVideoFractionLoaded())
+					console.log("video loaded fraction is"+$scope.advertisements[ad_no].player.getVideoLoadedFraction())
 					break
 				}
 			}
