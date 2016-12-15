@@ -752,14 +752,15 @@ var app = angular.module('app')
                 //when you get success reset the advertisement
                 $scope.defconfig = data;
                 $scope.advertisements = data.defaultads;
+		$scope.apply()
                 for (var i = $scope.advertisements.length - 1; i >= 0; i--) {
                     $scope.advertisements[i].show = false;
 		    $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
-		    /*if($scope.advertisements[i].adMimeType==="video/youtube"){
+		    if($scope.advertisements[i].adMimeType==="video/youtube"){
 				console.log('found a youtube video')
 				console.log(document)
 				var player=new YT.Player( $scope.advertisements[i].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
-		    }*/
+		    }
                     if (i === 0)
                         $scope.advertisements[i].show = true;
                 }
