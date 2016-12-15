@@ -27,13 +27,14 @@ var app = angular.module('app')
         function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout,$sce) {
 
             $scope.advertisements = [];
-	    $scope.player={
+	    $scope.youtube_advertisement_player={
 		advertisement:{
 			adUrl:"",
 			adMimeType:""
 		},
 		show:false
 	    }
+            
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
