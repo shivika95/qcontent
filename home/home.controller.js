@@ -516,6 +516,9 @@ var app = angular.module('app')
 				console.log(document)
 				var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
 		    }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.advertisements[currentIndexForAd].player){
+				if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
+					$scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
+				}
 				$scope.advertisements[currentIndexForAd].player.playVideo()
 		    }
                 }
