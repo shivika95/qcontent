@@ -517,9 +517,9 @@ var app = angular.module('app')
 				console.log('found a youtube video')
 				console.log(document)
 				var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
-				nextAd();
-                    		showAdv();
-                    		return;
+				//nextAd();
+                    		//showAdv();
+                    		//return;
 				
 		    }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.advertisements[currentIndexForAd].player){
 				/*if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
@@ -729,9 +729,9 @@ var app = angular.module('app')
 					}
 					$scope.advertisements[ad_no].player=event.target
 					console.log("advertisement url is : "+$scope.advertisements[ad_no].adUrl)
-					$scope.advertisements[ad_no].player.loadVideoByUrl($scope.advertisements[ad_no].adUrl)
+					$scope.advertisements[ad_no].player.loadVideoById($scope.advertisements[ad_no].adUrl)
 					//$scope.advertisements[ad_no].player.playVideo()
-					$scope.advertisements[ad_no].player.pauseVideo()
+					//$scope.advertisements[ad_no].player.pauseVideo()
 					console.log("video loaded fraction is"+$scope.advertisements[ad_no].player.getVideoLoadedFraction())
 					break
 				}
