@@ -34,7 +34,7 @@ var app = angular.module('app')
 		},
 		show:false
 	    }
-            var player=new YT.Player( "youtube_advertisement_player",{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+            player=new YT.Player( "youtube_advertisement_player",{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
@@ -415,13 +415,13 @@ var app = angular.module('app')
 
             function showDoc() {
 
-                
+                $scope.advertisements[currentIndexForAd].show = false;
 		if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube"){
-				$scope.youtube_advertisement_player.show = false;
 				//console.log('found a youtube video')
 				//console.log(document)
 				//var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
-				if($scope.advertisements[currentIndexForAd].player){
+				 $scope.youtube_advertisement_player.show = false;
+				if($scope.youtube_advertisement_player.player){
 					$scope.youtube_advertisement_player.player.pauseVideo()
 					$scope.youtube_advertisement_player.player.seekTo(0)
 				}
