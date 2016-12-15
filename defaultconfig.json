@@ -26,7 +26,7 @@
       "adId": "VIDEO_TEST_0",
       "adPriority": "LOW",
       "adName": "VIDEO_TEST_0",
-      "adUrl": "https://www.youtube.com/embed/wcPJSgpepWU?enablejsapi=1&widgetid=1",
+      "adUrl": "wcPJSgpepWU",
       "adMimeType": "video/youtube",
       "adStartTime":0,
       "adEndTime":-1,
