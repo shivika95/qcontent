@@ -7,6 +7,22 @@
   "fontSize": 38,
   "flash-color": "#0092cb",
   "defaultads": [
+
+
+    {
+      "adId": "QORQL_AD_2",
+      "adPriority": "LOW",
+      "adName": "QORQL_AD_2",
+      "adUrl": "images/qorql-ads-03.png",
+      "adMimeType": "image/png",
+      "adTime": 10,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+    },
+   
     {
       "adId": "VIDEO_TEST_2",
       "adPriority": "LOW",
