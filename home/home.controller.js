@@ -539,6 +539,7 @@ var app = angular.module('app')
 				/*if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
 					$scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
 				}*/
+				console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
 				$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
 			$scope.advertisements[currentIndexForAd].adUrl,5,"large")
 				//$scope.youtube_advertisement_player.player.playVideo()
