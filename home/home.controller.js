@@ -541,7 +541,7 @@ var app = angular.module('app')
 				}*/
 				console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
 				$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
-			$scope.advertisements[currentIndexForAd].adUrl,5,"large")
+			$scope.advertisements[currentIndexForAd].adUrl.toString(),5,"large")
 				//$scope.youtube_advertisement_player.player.playVideo()
 				$scope.youtube_advertisement_player.show=true
 		    }
