@@ -34,7 +34,13 @@ var app = angular.module('app')
 		},
 		show:false
 	    }
-            var player=new YT.Player( "youtube_advertisement_player",{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
+            var player=new YT.Player( "youtube_advertisement_player",{
+									videoId: 'M7lc1UVf-VE',
+									events:{
+										'onReady':onPlayerReady,
+										'onStateChange':onPlayerStateChange
+										}
+								})
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
@@ -524,7 +530,7 @@ var app = angular.module('app')
                     		return;
 				
 		    }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player){
-				$scope.youtube_advertisement_player.player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
+				//$scope.youtube_advertisement_player.player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
 				/*if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
 					$scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
 				}*/
