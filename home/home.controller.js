@@ -489,7 +489,7 @@ var app = angular.module('app')
                     return;
 
                 }
-                console.log("showing advertisement " + JSON.stringify($scope.advertisement));
+                console.log("showing advertisement " + JSON.stringify($scope.advertisement.adName));
                 console.log("las displayed was " + $scope.advertisement.lastDisplayed);
 
                 if ($scope.advertisement.show_ad === false) {
@@ -667,13 +667,33 @@ var app = angular.module('app')
                 $timeout.cancel(stopped);
                 $timeout.cancel(extraTimeout);
             }
+	    /*function videoMonitor(){
+		videomonitor=$timeout(function (){
+		
+		},1000)
+	    }*/
 
             function countDown() {
                 stopped = $timeout(function () {
                     if ($scope.counter === 0) {
                         nextAd();
                         showAdv();
-                    } else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
+                    }
+		    /*else if($scope.counter < ($scope.advertisement.adTime?$scope.advertisement.adTime:10)){
+				if($scope.advertisement.adMimeType==="video/youtube"){
+					if($scope.advertisement.lastplayed && $scope.advertisement.lastplayed!=-1){
+						$scope.adstatecounter++
+					}else{
+						$scope.adstatecounter=0
+					}
+					if($scope.adstatecounter>=5){
+						
+					}
+				}
+				
+			
+		    }*/ 
+		    else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
                         prevIndex = 0;
                         nextDoc();
                         showDoc();
@@ -693,15 +713,22 @@ var app = angular.module('app')
 						$scope.advertisements[ad_no].adTime==event.target.getDuration()
 					}
 					$scope.advertisements[ad_no].player=event.target
-					//$scope.advertisements[ad_no].player.playVideo()
-					//$scope.advertisements[ad_no].player.pauseVideo()
-					//console.log($scope.advertisements[ad_no].player)
+					$scope.advertisements[ad_no].player.playVideo()
+					$scope.advertisements[ad_no].player.pauseVideo()
+					console.log($scope.advertisements[ad_no].player.get)
 					break
 				}
 			}
 	    }
 	    function onPlayerStateChange(event) {
 			console.log("event is "+event.data)
+			/*if(event.a.id===$scope.advertisement.adId){
+				if(event.data==YT.PlayerState.UNSTARTED || event.data==YT.PlayerState.BUFFERING){
+					$scope.advertisement.lastplayed=new Date().getTime()
+				}else{
+					$scope.advertisement.lastplayed=-1
+				}
+			}*/
 			//console.log("available events are "+JSON.stringify(YT.PlayerState))
       	    }
 
