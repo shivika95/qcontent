@@ -542,7 +542,7 @@ var app = angular.module('app')
 													}
 											});*/
 				var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{
-												videoId: $scope.advertisements[currentIndexForAd].adUrl,
+												videoId: $scope.advertisements[currentIndexForAd].adUrl.toString(),
 												events:{
 													'onReady':onPlayerReady,
 													'onStateChange':onPlayerStateChange
