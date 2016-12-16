@@ -34,12 +34,18 @@ var app = angular.module('app')
 		},
 		show:false
 	    }
-            var player=new YT.Player( "youtube_advertisement_player",{
+            
+	    $scope.getYouTubePlayerInstance=function(){
+		var player=new YT.Player( "youtube_advertisement_player",{
 									events:{
 										'onReady':onPlayerReady,
 										'onStateChange':onPlayerStateChange
-										}
+										},
+									playerVars: {rel: 0}
 								})
+		return player
+	    }
+	    var player=$scope.getYouTubePlayerInstance()
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
@@ -416,6 +422,9 @@ var app = angular.module('app')
                 for (var i = 0; i < $scope.advertisements.length; i++) {
                     $scope.advertisements[i].show = false;
                 }
+		if($scope.youtube_advertisement_player.player){
+			$scope.youtube_advertisement_player.player.pauseVideo()
+		}
             }
 
             function showDoc() {
@@ -523,13 +532,14 @@ var app = angular.module('app')
 		    if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player === undefined){
 				console.log('found a youtube video')
 				console.log(document)
-				var player=new YT.Player( "youtube_advertisement_player",{
+				/*var player=new YT.Player( "youtube_advertisement_player",{
 												videoId: $scope.advertisements[currentIndexForAd].adUrl,
 												events:{
 													'onReady':onPlayerReady,
 													'onStateChange':onPlayerStateChange
 													}
-											});
+											});*/
+				var player=$scope.getYouTubePlayerInstance()
 				nextAd();
                     		showAdv();
                     		return;
@@ -541,7 +551,7 @@ var app = angular.module('app')
 				}*/
 				console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
 				$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
-			$scope.advertisements[currentIndexForAd].adUrl.toString(),5,"large")
+			$scope.advertisements[currentIndexForAd].adUrl.toString(),0,"large")
 				//$scope.youtube_advertisement_player.player.playVideo()
 				$scope.youtube_advertisement_player.show=true
 		    }
@@ -648,10 +658,10 @@ var app = angular.module('app')
                     $timeout(function () {
 
 
-                        if ($scope.counter <= 10) {
+                        if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
                             showAdv();
                         }
-                        else if ($scope.counter <= 30) {
+                        else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
                             showDoc();
 
