@@ -422,6 +422,7 @@ var app = angular.module('app')
                 for (var i = 0; i < $scope.advertisements.length; i++) {
                     $scope.advertisements[i].show = false;
                 }
+		$scope.youtube_advertisement_player.show=false
 		if($scope.youtube_advertisement_player.player){
 			$scope.youtube_advertisement_player.player.pauseVideo()
 		}
@@ -550,8 +551,13 @@ var app = angular.module('app')
 					$scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
 				}*/
 				console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
-				$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
-			$scope.advertisements[currentIndexForAd].adUrl.toString(),0,"large")
+				if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED){
+					$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
+					$scope.advertisements[currentIndexForAd].adUrl.toString(),0,"large")
+				}else {
+					$scope.youtube_advertisement_player.player.playVideo()
+				}
+				
 				//$scope.youtube_advertisement_player.player.playVideo()
 				$scope.youtube_advertisement_player.show=true
 		    }
