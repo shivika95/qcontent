@@ -29,7 +29,7 @@ var app = angular.module('app')
             $scope.advertisements = [];
 	    $scope.youtube_advertisement_player={
 		advertisement:{
-			adId="",
+			adId:"",
 			adUrl:"",
 			adMimeType:""
 		},
