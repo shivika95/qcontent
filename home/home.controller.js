@@ -34,12 +34,12 @@ var app = angular.module('app')
 		},
 		show:false
 	    }
-            var player=new YT.Player( "youtube_advertisement_player",{
+            /*var player=new YT.Player( "youtube_advertisement_player",{
 									events:{
 										'onReady':onPlayerReady,
 										'onStateChange':onPlayerStateChange
 										}
-								})
+								})*/
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
@@ -520,30 +520,38 @@ var app = angular.module('app')
                 }
 
                 else {
-		    if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player === undefined){
+		    if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.advertisements[currentIndexForAd].player === undefined){
 				console.log('found a youtube video')
 				console.log(document)
-				var player=new YT.Player( "youtube_advertisement_player",{
+				/*var player=new YT.Player( "youtube_advertisement_player",{
 												videoId: $scope.advertisements[currentIndexForAd].adUrl,
 												events:{
 													'onReady':onPlayerReady,
 													'onStateChange':onPlayerStateChange
 													}
-											});
+											});*/
+				var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{
+												videoId: $scope.advertisements[currentIndexForAd].adUrl,
+												events:{
+													'onReady':onPlayerReady,
+													'onStateChange':onPlayerStateChange
+													}
 				nextAd();
                     		showAdv();
                     		return;
 				
-		    }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player){
+		    }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.advertisements[currentIndexForAd].player){
 				//$scope.youtube_advertisement_player.player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
-				/*if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
-					$scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
-				}*/
+				if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
+					$scope.advertisements[currentIndexForAd].player.loadVideoById($scope.advertisements[currentIndexForAd].adUrl.toString())
+				}
 				console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
-				$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
-			$scope.advertisements[currentIndexForAd].adUrl.toString(),5,"large")
+				$scope.advertisements[currentIndexForAd].player.playVideo()
+				//$scope.advertisements[currentIndexForAd].player.
+				/*$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
+			$scope.advertisements[currentIndexForAd].adUrl.toString(),5,"large")*/
 				//$scope.youtube_advertisement_player.player.playVideo()
-				$scope.youtube_advertisement_player.show=true
+				//$scope.youtube_advertisement_player.show=true
 		    }
                     $scope.docVisible = false;
                     $scope.flashVisible = false;
@@ -738,9 +746,9 @@ var app = angular.module('app')
                 }, 1000);
             }
 	    function onPlayerReady(event) {
-			$scope.youtube_advertisement_player.player=event.target
+			//$scope.youtube_advertisement_player.player=event.target
 			//event.target.playVideo()
-			/*for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
+			for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
 				if($scope.advertisements[ad_no].adId===event.target.a.id){
 					console.log('player binded')
 					if($scope.advertisements[ad_no].adTime===-1){
@@ -751,12 +759,12 @@ var app = angular.module('app')
 					
 					//$scope.advertisements[ad_no].player.loadVideoById($scope.advertisements[ad_no].adUrl)
 					$scope.advertisements[ad_no].player.playVideo()
-					//$scope.advertisements[ad_no].player.pauseVideo()
-					$scope.advertisements[ad_no].player.a.accessKey='AIzaSyDPwSyQsRKKZjm3SMYrr6Tipgk7D4tJkhk'
+					$scope.advertisements[ad_no].player.pauseVideo()
+					//$scope.advertisements[ad_no].player.a.accessKey='AIzaSyDPwSyQsRKKZjm3SMYrr6Tipgk7D4tJkhk'
 					console.log("video loaded fraction is"+$scope.advertisements[ad_no].player.getVideoLoadedFraction())
 					break
 				}
-			}*/
+			}
 	    }
 	    function onPlayerStateChange(event) {
 			console.log("event is "+event.data)
