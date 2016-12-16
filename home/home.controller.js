@@ -415,6 +415,13 @@ var app = angular.module('app')
             function hideAllAds() {
                 for (var i = 0; i < $scope.advertisements.length; i++) {
                     $scope.advertisements[i].show = false;
+		    if($scope.advertisements[i].adMimeType==="video/youtube"){
+				if($scope.advertisements[i].player){
+					$scope.advertisements[i].player.pauseVideo()
+					//$scope.advertisements[i].player.seekTo(0)
+				}
+			}
+		
                 }
             }
 
@@ -425,10 +432,14 @@ var app = angular.module('app')
 				//console.log('found a youtube video')
 				//console.log(document)
 				//var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
-				 $scope.youtube_advertisement_player.show = false;
+				 /*$scope.youtube_advertisement_player.show = false;
 				if($scope.youtube_advertisement_player.player){
 					$scope.youtube_advertisement_player.player.pauseVideo()
 					$scope.youtube_advertisement_player.player.seekTo(0)
+				}*/
+				if($scope.advertisements[currentIndexForAd].player){
+					$scope.advertisements[currentIndexForAd].player.pauseVideo()
+					$scope.advertisements[currentIndexForAd].player.seekTo(0)
 				}
 		}
 
@@ -656,10 +667,10 @@ var app = angular.module('app')
                     $timeout(function () {
 
 
-                        if ($scope.counter <= 10) {
+                        if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
                             showAdv();
                         }
-                        else if ($scope.counter <= 30) {
+                        else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
                             showDoc();
 
