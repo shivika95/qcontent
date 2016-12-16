@@ -547,7 +547,7 @@ var app = angular.module('app')
 													'onReady':onPlayerReady,
 													'onStateChange':onPlayerStateChange
 													}
-				}
+				});
 				nextAd();
                     		showAdv();
                     		return;
