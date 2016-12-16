@@ -552,7 +552,7 @@ var app = angular.module('app')
 				}*/
 				console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
 				console.log("player status : "+$scope.youtube_advertisement_player.player.getPlayerState())
-				if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED){
+				if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED || $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.CUED){
 					$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
 					$scope.advertisements[currentIndexForAd].adUrl.toString(),0,"large")
 				}else {
