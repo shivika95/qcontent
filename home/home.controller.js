@@ -770,8 +770,8 @@ var app = angular.module('app')
 					console.log("advertisement url is : "+$scope.advertisements[ad_no].adUrl)
 					
 					//$scope.advertisements[ad_no].player.loadVideoById($scope.advertisements[ad_no].adUrl)
-					$scope.advertisements[ad_no].player.playVideo()
-					$scope.advertisements[ad_no].player.pauseVideo()
+					//$scope.advertisements[ad_no].player.playVideo()
+					//$scope.advertisements[ad_no].player.pauseVideo()
 					//$scope.advertisements[ad_no].player.a.accessKey='AIzaSyDPwSyQsRKKZjm3SMYrr6Tipgk7D4tJkhk'
 					console.log("video loaded fraction is"+$scope.advertisements[ad_no].player.getVideoLoadedFraction())
 					break
