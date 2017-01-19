@@ -10,12 +10,14 @@
 
 
     {
-      "adId": "QORQL_AD_2",
+      "adId": "VIDEO_TEST_2",
       "adPriority": "LOW",
-      "adName": "QORQL_AD_2",
-      "adUrl": "images/qorql-ads-03.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
+      "adName": "VIDEO_TEST_2",
+      "adUrl": "JMgAwxoDeOg",
+      "adMimeType": "video/youtube",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 22,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
