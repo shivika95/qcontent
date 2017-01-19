@@ -55,9 +55,7 @@
                           </textarea>-->
             </div>
 
-
         </div>
-
         <div ng-show="docVisible">
             <nav class="navbar navbar-default" role="navigation" style="background-color:#151172 ; font-size:38px;">
                 <div class="container">
@@ -79,11 +77,16 @@
 
                     <ul class="nav navbar-nav navbar-right" style="padding-top:1%;">
 
-                        <li ng-if="doctor.body.is_disconnected==undefined || doctor.body.is_disconnected==false">
-                            <a href="#">
-                                <b> {{doctor.header.cinicName}}</b></a></li>
+                    <li ng-if="doctor.body.is_disconnected==undefined || doctor.body.is_disconnected==false">
+                        <a href="#">
+                            <b> 
+                                      <p>{{ clock | date:'h:mma'}}</p>
+                             
+                                </b>
+                        </a>
+                    </li>
 
-                    </ul>
+                </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <li ng-if="doctor.body.is_disconnected!=undefined ||doctor.body.is_disconnected==true">
