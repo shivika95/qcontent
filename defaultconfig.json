@@ -42,18 +42,17 @@
       "adId": "VIDEO_TEST_3",
       "adPriority": "LOW",
       "adName": "VIDEO_TEST_3",
-      "adUrl": "jRD4A2hEQJs",
+      "adUrl": "MpDLIlHNkqE",
       "adMimeType": "video/youtube",
       "adStartTime":0,
       "adEndTime":-1,
-      "adTime": 170,
+      "adTime": 128,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
-    }
-    
+    }    
 
   ],
   "knowndoctors": [
