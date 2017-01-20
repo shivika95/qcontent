@@ -74,9 +74,16 @@ body{
   color: #ffffff !important;
  }   
 
-table, th, td {
+table, th{
     border: 1px solid black !important;
 }
+
+td{
+	word-wrap: normal;
+	overflow: hidden;
+	border: 1px solid black !important;
+}
+
 .navbar>.container .navbar-centered, 
 .navbar>.navbar-centered {
       
