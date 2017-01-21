@@ -57,6 +57,7 @@ var app = angular.module('app')
 		return player
 	    }
 	    var player=$scope.getYouTubePlayerInstance()
+            player.getPlaybackQuality(small)
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
