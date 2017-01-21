@@ -105,17 +105,17 @@
 
                 <div class="table-responsive container" style="margin-top:1px;">
 
-                    <table cellpadding="0" class=" table table-bordered" style="font-size:36px;">
+                    <table id="myTable" width="100%" cellpadding="0" class=" table table-bordered" style="font-size:36px;">
 
                         <thead>
 
                             <tr style="background-color:#7EB6FF;">
-                                <th style="text-align:center"><b>S.No.</b></th>
-                                <th style="text-align:center"><b>Name</b></th>
-                                <th style="text-align:center"><b>Token</b> No.</th>
-                                <th style="text-align:center"><b>Appt-Time</b></th>
-                                <th style="text-align:center"><b>In-time</b></th>
-                                <th style="text-align:center">Type</th>
+                                <th style="text-align:center" class="shrink"><b>S.No.</b></th>
+                                <th style="text-align:center" class="expand"><b>Name</b></th>
+                                <th style="text-align:center" class="shrink"><b>Token</b> No.</th>
+                                <th style="text-align:center" class="shrink"><b>Appt-Time</b></th>
+                                <th style="text-align:center" class="shrink"><b>In-time</b></th>
+                                <th style="text-align:center" class="shrink">Type</th>
                             </tr>
 
                         </thead>
@@ -123,20 +123,20 @@
 
                         <tr ng-repeat="appointment in patientQueue"
                             ng-class="{'selected':(appointment.patientid === doctor.body.queue[0].patientid && isTrue)}">
-                            <td align="center"><b>{{startIndex+$index+1}}</b></td>
-                            <td align="center"><b>{{appointment.patientName}}</b></td>
-                            <td align="center" ng-if="appointment.token > 0"><b>{{appointment.token}} </b></td>
-                            <td align="center" ng-if="appointment.token === 0"> -</td>
+                            <td align="center" class="shrink"><b>{{startIndex+$index+1}}</b></td>
+                            <td align="center" class="expand"><b>{{appointment.patientName}}</b></td>
+                            <td align="center" ng-if="appointment.token > 0" class="shrink"><b>{{appointment.token}} </b></td>
+                            <td align="center" ng-if="appointment.token === 0" class="shrink"> -</td>
 
-                            <td align="center" ng-if="appointment.typeOfEntry ===fromChekinQ"><b>{{
+                            <td align="center" ng-if="appointment.typeOfEntry ===fromChekinQ" class="shrink"><b>{{
                                 appointment.entrySlotTime*1000 | date:'shortTime':'+0530' }}</b></td>
-                            <td align="center" ng-if="appointment.typeOfEntry ===fromWalkinQ "><b>NA</b></td>
+                            <td align="center" ng-if="appointment.typeOfEntry ===fromWalkinQ " class="shrink"><b>NA</b></td>
 
-                            <td align="center"><b>{{appointment.timeOfEntry | date:'shortTime' :'':'+0530'}}</b></td>
-                            <td ng-if="appointment.typeOfEntry === fromChekinQ" style="text-align:center !important;vertical-align:middle !important;">
+                            <td align="center" class="shrink"><b>{{appointment.timeOfEntry | date:'shortTime' :'':'+0530'}}</b></td>
+                            <td ng-if="appointment.typeOfEntry === fromChekinQ" style="text-align:center !important;vertical-align:middle !important;" class="shrink">
                                 <img class="img-thumbnail text-center" style="display: block !important; margin-left: auto !important;margin-right: auto!important;" src="./images/appointment.png"/>
                             </td>
-                            <td ng-if="appointment.typeOfEntry ===fromWalkinQ" style="text-align:center;vertical-align:middle !important;">
+                            <td ng-if="appointment.typeOfEntry ===fromWalkinQ" style="text-align:center;vertical-align:middle !important;" class="shrink">
                                 <img class="img-thumbnail text-center" style="display: block !important;margin-left: auto !important ;  text-align:center !important;vertical-align:middle;margin-right: auto!important;" src="./images/walkin.png"/>
                             </td>
                         </tr>
@@ -166,4 +166,28 @@
             </div>
 
         </div>
-</div>
+		
+				<script>				 
+				var tableRows = document.getElementById('myTable').rows;
+				maxLength = 9;
+				mmaxLength= 20;				
+
+				 for(var i = 0; i<tableRows.length;i++)
+					{
+					var rowCells = tableRows[i].cells;
+					for(var a = 0; a<rowCells.length;a++)
+						{						
+						if(rowCells[a].innerText.length > maxLength)
+							{
+							rowCells[a].style.fontSize = "18px";
+							rowCells[a].style.overflow = "hidden";
+							}
+						if(rowCells[a].innerText.length > mmaxLength)
+							{
+							rowCells[a].style.fontSize = "18px";
+							rowCells[a].style.wordWrap = "normal";
+							rowCells[a].style.overflow = "hidden";
+							}					
+						}						
+					}				
+				</script>
