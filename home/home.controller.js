@@ -27,14 +27,15 @@ var app = angular.module('app')
         function (audio, CastReceiver, UserService, AuthenticationService, $rootScope, $scope, $http, $timeout,$sce) {
 
             $scope.advertisements = [];
-	    $scope.youtube_advertisement_player={
-		advertisement:{
-			adId:"",
-			adUrl:"",
-			adMimeType:""
-		},
-		show:false
-	    }
+
+    	    $scope.youtube_advertisement_player={
+            		advertisement:{
+            			adId:"",
+            			adUrl:"",
+            			adMimeType:""
+            		},
+    		show:false
+	       }
         $scope.clock = "loading clock..."; // initialise the time variable
                 $scope.tickInterval = 1000 //ms
 
@@ -57,7 +58,7 @@ var app = angular.module('app')
 		return player
 	    }
 	    var player=$scope.getYouTubePlayerInstance()
-            player.getPlaybackQuality(small)
+
             $scope.advertisement = {};
 	    $scope.state={
 		"advertisement":false,
@@ -567,7 +568,7 @@ var app = angular.module('app')
 				
 				if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED || $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.CUED || !($scope.youtube_advertisement_player.advertisement.adId === $scope.advertisements[currentIndexForAd].adId)  ){
 					$scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
-					$scope.advertisements[currentIndexForAd].adUrl.toString(),0,"large")
+					$scope.advertisements[currentIndexForAd].adUrl.toString(),0,"small")
 					$scope.youtube_advertisement_player.advertisement=$scope.advertisements[currentIndexForAd]
 				}else {
 					$scope.youtube_advertisement_player.player.playVideo()
