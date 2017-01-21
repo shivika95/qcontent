@@ -74,14 +74,25 @@ body{
   color: #ffffff !important;
  }   
 
-table, th{
+table{
+	table-layout: fixed;
+	border: 1px solid black !important;
+}
+
+th{
     border: 1px solid black !important;
 }
 
-td{
-	word-wrap: normal;
-	overflow: hidden;
+td{	
 	border: 1px solid black !important;
+}
+table td.shrink {
+    white-space:nowrap;
+	
+}
+table td.expand {
+    width: 65%;
+	white-space:nowrap;
 }
 
 .navbar>.container .navbar-centered, 
