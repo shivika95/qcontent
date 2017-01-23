@@ -442,8 +442,8 @@ var app = angular.module('app')
 
                     setTimeout(function () {      
                       // Resume play if the element if is paused.
-                      if (el.paused) {
-                        el.play();
+                      if ($scope.youtube_advertisement_player.player.paused) {
+                        $scope.youtube_advertisement_player.player.play();
                       }
                     }, waitTime);
                     		}
