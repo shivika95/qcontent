@@ -727,7 +727,6 @@ var app = angular.module('app')
             }
         function onPlayerReady(event) {
             $scope.youtube_advertisement_player.player=event.target
-	    $scope.youtube_advertisement_player.player.mute()
             
         }
         function onPlayerStateChange(event) {
