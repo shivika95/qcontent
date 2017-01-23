@@ -8,15 +8,18 @@ var app = angular.module('app')
             audioElement: audioElement,
 
             play: function (filename) {
+		console.log('stated to play :'+filename)
                 audioElement.src = filename;
                 audioElement.play();     //  <-- That's all you need
             },
             playInLoop: function (filename) {
+		console.log('playing in loop :'+filename)
                 audioElement.loop = true;
                 audioElement.src = filename;
                 audioElement.play();
             },
             stop: function () {
+		console.log('stopped video :'+audioElement.src)
                 audioElement.pause();
                 audioElement.src = audioElement.currentSrc;
                 /** http://stackoverflow.com/a/16978083/1015046 **/
