@@ -5,9 +5,7 @@
 	<script>
 	var player=null
 	function onLoad(){
-		player=document.getElementById('player')
-		document.getElementById("disconnection_player").play()
-		setTimeout(function(){player.pauseVideo();document.getElementById("disconnection_player").play()},2000)
+		
 		/*player = new YT.Player('player', {
           						height: '390',
           						width: '640',
@@ -57,7 +55,7 @@
     <div id="player"></div>
    </div-->
    <p style="position:absolute; ">
-        <audio id="disconnection_player" src="http://qliveangularvideo.herokuapp.com/sounds/rail.mp3"  controls loop>
+        <audio id="disconnection_player" src="http://qliveangularvideo.herokuapp.com/sounds/rail.mp3"  controls loop autoplay>
         </audio>
     </p>
    <video id="player" autoplay>
