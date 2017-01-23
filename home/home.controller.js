@@ -77,8 +77,6 @@ var app = angular.module('app')
             $scope.device_doctors_map = [];
 
             $scope.is_doctor_connected = false;
-            //   $scope.Appointment_time = Date(patientQueue.entrySlotTime * 1000);
-            // $scope.In_time = Date(patientQueue.timeOfEntry );
             //////////////////////////////////////slack Call//////////////
             function post_log_on_slack(logtobeposted) {
 
@@ -350,7 +348,6 @@ var app = angular.module('app')
                     $scope.doctors.push(data);
                     $http.get('../' + data.header.clinicID + '.defaultconfig.json').success(function (data_from_configfile) {
                         //when you get success reset the advertisement
-                        //$scope.defconfig = data;
                         $scope.advertisements_newly_added = data_from_configfile.defaultads;
                         if ($scope.advertisements_newly_added && $scope.advertisements) {
 
@@ -372,15 +369,7 @@ var app = angular.module('app')
 
                             $scope.advertisements_newly_added = [];
                         }
-                        /*for (var i = $scope.advertisements.length - 1; i >= 0; i--) {
-                         $scope.advertisements[i].show = false;
-                         if (i === 0)
-                         $scope.advertisements[i].show = true;
-                         }*/
-                        //nextAd();
-                        //showAdv();
-                        //$scope.counter += 1;
-                        //countDown();
+                        
                     });
 
                 }
@@ -453,7 +442,7 @@ var app = angular.module('app')
                 }
         }
 
-                $scope.doctor = {};
+               
                 $scope.doctor = $scope.doctors[currentIndexForDoc];
                 ////////////////Doc Splice Function ////////////////////////////////
 
@@ -544,23 +533,13 @@ var app = angular.module('app')
             if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player === undefined){
                 console.log('found a youtube video')
                 console.log(document)
-                /*var player=new YT.Player( "youtube_advertisement_player",{
-                                                videoId: $scope.advertisements[currentIndexForAd].adUrl,
-                                                events:{
-                                                    'onReady':onPlayerReady,
-                                                    'onStateChange':onPlayerStateChange
-                                                    }
-                                            });*/
+               
                 var player=$scope.getYouTubePlayerInstance()
                 nextAd();
                             showAdv();
                             return;
                 
             }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player){
-                //$scope.youtube_advertisement_player.player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
-                /*if($scope.advertisements[currentIndexForAd].player.getPlayerState()==YT.PlayerState.UNSTARTED){
-                    $scope.advertisements[currentIndexForAd].player.loadVideoByUrl($scope.advertisements[currentIndexForAd].adUrl)
-                }*/
                 console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
                 console.log("player status : "+$scope.youtube_advertisement_player.player.getPlayerState())
                 
@@ -573,7 +552,7 @@ var app = angular.module('app')
                     $scope.youtube_advertisement_player.advertisement=$scope.advertisements[currentIndexForAd]
                 }
                 
-                //$scope.youtube_advertisement_player.player.playVideo()
+               
                 $scope.youtube_advertisement_player.show=true
             }
                     $scope.docVisible = false;
@@ -711,19 +690,12 @@ var app = angular.module('app')
                     $scope.flashBus = $scope.flashQueue[flashindex];
                     hideAllAds();
                     playbreakingnewssound();
-                    //playSound("Attention .  Token No. "+ $scope.flashBus.body.token + $scope.flashBus.body.patientName +  " . kripya Dr.  .  " + $scope.flashBus.header.doctorName + " ke pas jayea");
-
                     $timeout(function () {
                         showFlash(++flashindex)
                     }, 6000);
                 }
 
             }
-
-
-            // var TIMER_ADV = 10;
-            // var TIMER_DOC= 20;
-            // var TIMER_FLASH = 6000;
             $scope.counter = 0;
             var stopped;
 
@@ -731,11 +703,6 @@ var app = angular.module('app')
                 $timeout.cancel(stopped);
                 $timeout.cancel(extraTimeout);
             }
-        /*function videoMonitor(){
-        videomonitor=$timeout(function (){
-        
-        },1000)
-        }*/
 
             function countDown() {
                 stopped = $timeout(function () {
@@ -743,20 +710,7 @@ var app = angular.module('app')
                         nextAd();
                         showAdv();
                     }
-            /*else if($scope.counter < ($scope.advertisement.adTime?$scope.advertisement.adTime:10)){
-                if($scope.advertisement.adMimeType==="video/youtube"){
-                    if($scope.advertisement.lastplayed && $scope.advertisement.lastplayed!=-1){
-                        $scope.adstatecounter++
-                    }else{
-                        $scope.adstatecounter=0
-                    }
-                    if($scope.adstatecounter>=5){
-                        
-                    }
-                }
-                
-            
-            }*/ 
+        
             else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
                         prevIndex = 0;
                         nextDoc();
@@ -770,35 +724,11 @@ var app = angular.module('app')
             }
         function onPlayerReady(event) {
             $scope.youtube_advertisement_player.player=event.target
-            //event.target.playVideo()
-            /*for(var ad_no=0;ad_no<$scope.advertisements.length;ad_no++){
-                if($scope.advertisements[ad_no].adId===event.target.a.id){
-                    console.log('player binded')
-                    if($scope.advertisements[ad_no].adTime===-1){
-                        $scope.advertisements[ad_no].adTime==event.target.getDuration()
-                    }
-                    $scope.advertisements[ad_no].player=event.target
-                    console.log("advertisement url is : "+$scope.advertisements[ad_no].adUrl)
-                    
-                    //$scope.advertisements[ad_no].player.loadVideoById($scope.advertisements[ad_no].adUrl)
-                    $scope.advertisements[ad_no].player.playVideo()
-                    //$scope.advertisements[ad_no].player.pauseVideo()
-                    $scope.advertisements[ad_no].player.a.accessKey='AIzaSyDPwSyQsRKKZjm3SMYrr6Tipgk7D4tJkhk'
-                    console.log("video loaded fraction is"+$scope.advertisements[ad_no].player.getVideoLoadedFraction())
-                    break
-                }
-            }*/
+            
         }
         function onPlayerStateChange(event) {
             console.log("event is "+event.data)
-            /*if(event.a.id===$scope.advertisement.adId){
-                if(event.data==YT.PlayerState.UNSTARTED || event.data==YT.PlayerState.BUFFERING){
-                    $scope.advertisement.lastplayed=new Date().getTime()
-                }else{
-                    $scope.advertisement.lastplayed=-1
-                }
-            }*/
-            //console.log("available events are "+JSON.stringify(YT.PlayerState))
+            
             }
 
             $http.get('../defaultconfig.json').success(function (data) {
@@ -808,11 +738,7 @@ var app = angular.module('app')
                 for (var i = $scope.advertisements.length - 1; i >= 0; i--) {
                     $scope.advertisements[i].show = false;
             $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
-            /*if($scope.advertisements[i].adMimeType==="video/youtube"){
-                console.log('found a youtube video')
-                console.log(document)
-                var player=new YT.Player( $scope.advertisements[i].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
-            }*/
+            
                     if (i === 0)
                         $scope.advertisements[i].show = true;
                 }
