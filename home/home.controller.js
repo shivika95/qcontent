@@ -425,7 +425,10 @@ var app = angular.module('app')
                 for (var i = 0; i < $scope.advertisements.length; i++) {
                     $scope.advertisements[i].show = false;
                 }
-        	
+        	if($scope.youtube_advertisement_player.player){
+            		$scope.youtube_advertisement_player.player.pauseVideo()
+        	}
+		$scope.youtube_advertisement_player.show=false
             }
 
             function showDoc() {
@@ -689,12 +692,7 @@ var app = angular.module('app')
                 else {
                     $scope.flashBus = $scope.flashQueue[flashindex];
                     hideAllAds();
-		    /**hiding youtube video**/
-		    if($scope.youtube_advertisement_player.player){
-            		$scope.youtube_advertisement_player.player.pauseVideo().then(function(){playbreakingnewssound();},function(){})
-        	    }
-		    $scope.youtube_advertisement_player.show=false
-                    
+                    playbreakingnewssound();
                     $timeout(function () {
                         showFlash(++flashindex)
                     }, 6000);
@@ -729,6 +727,7 @@ var app = angular.module('app')
             }
         function onPlayerReady(event) {
             $scope.youtube_advertisement_player.player=event.target
+	    
             
         }
         function onPlayerStateChange(event) {
