@@ -134,7 +134,7 @@ var app = angular.module('app')
                     connectedSenders: number_of_connected_devices,
                     event: event,
                     channel: "#qlive_connection_test",
-                    collection: $scope.defconfig.connection_issue_collection
+                    //collection: $scope.defconfig.connection_issue_collection
                 };
                 post_log_on_slack(logtobeposted)
             }
