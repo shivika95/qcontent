@@ -430,7 +430,7 @@ var app = angular.module('app')
 
             var prevIndex = 0;
             var prevIndex_backup = 0;
-              var waitTime = 150;
+           
             function hideAllAds() {
                 for (var i = 0; i < $scope.advertisements.length; i++) {
                     $scope.advertisements[i].show = false;
@@ -438,15 +438,6 @@ var app = angular.module('app')
 		$scope.youtube_advertisement_player.show=false
 		if($scope.youtube_advertisement_player.player){
 			$scope.youtube_advertisement_player.player.pauseVideo()
-          
-
-                    setTimeout(function () {      
-                      // Resume play if the element if is paused.
-                      if ($scope.youtube_advertisement_player.player.paused) {
-                        $scope.youtube_advertisement_player.player.play();
-                      }
-                    }, waitTime);
-                    		}
             }
 
             function showDoc() {
