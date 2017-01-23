@@ -160,7 +160,10 @@ var app = angular.module('app')
 
 
             function playbreakingnewssound() {
-                audio.playInLoop("sounds/rail.mp3");
+		$timeout(function(){
+			audio.playInLoop("sounds/rail.mp3");
+		},1000)
+                
                 $timeout(function () {
                     audio.stop();
                 }, 5000);
