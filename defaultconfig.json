@@ -23,6 +23,19 @@
       "showticker": false
     },
    
+   {
+      "adId": "QORQL_AD_3",
+      "adPriority": "LOW",
+      "adName": "QORQL_AD_3",
+      "adUrl": "images/dr_asha_rathi.gif",
+      "adMimeType": "image/gif",
+      "adTime": 22,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+    },
     {
       "adId": "Rathi_Hospital_AD_1",
       "adPriority": "LOW",
