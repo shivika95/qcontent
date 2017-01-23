@@ -76,7 +76,7 @@
       "adMimeType": "video/youtube",
       "adStartTime":0,
       "adEndTime":-1,
-      "adTime": 128,
+      "adTime": 50,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
@@ -88,35 +88,17 @@
     "adId": "VIDEO_TEST_3",
       "adPriority": "LOW",
       "adName": "VIDEO_TEST_3",
-      "adUrl": "bAwS0UslEDs",
+      "adUrl": "0DU0MauLv",
       "adMimeType": "video/youtube",
       "adStartTime":0,
       "adEndTime":-1,
-      "adTime": 128,
+      "adTime": 135,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false 
-},
-{
- 
-  "adId": "VIDEO_TEST_3",
-      "adPriority": "LOW",
-      "adName": "VIDEO_TEST_3",
-      "adUrl": " KpY2loe1lTE",
-      "adMimeType": "video/youtube",
-      "adStartTime":0,
-      "adEndTime":-1,
-      "adTime": 128,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false 
-
 }
-
   ],
   "knowndoctors": [
     {
