@@ -428,10 +428,10 @@ var app = angular.module('app')
                 for (var i = 0; i < $scope.advertisements.length; i++) {
                     $scope.advertisements[i].show = false;
                 }
-        $scope.youtube_advertisement_player.show=false
-        if($scope.youtube_advertisement_player.player){
-            $scope.youtube_advertisement_player.player.pauseVideo()
-        }
+        	if($scope.youtube_advertisement_player.player){
+            		$scope.youtube_advertisement_player.player.pauseVideo()
+        	}
+		$scope.youtube_advertisement_player.show=false
             }
 
             function showDoc() {
