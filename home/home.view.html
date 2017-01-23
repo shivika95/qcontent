@@ -11,12 +11,16 @@
    <!-- <button type="button" class="btn btn-danger btn-circle btn-lg close-image">{{counter}}</button>-->
         <div id="advertisement_container" >
             <div ng-show="youtube_advertisement_player.show">
-            	<div class="img-responsive "  id="youtube_advertisement_player" rel="preload"
+                <div class="img-responsive "  id="youtube_advertisement_player" 
                          style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>
-            	
+                
                 </div>
                 <div ng-show="advertisement.show" ng-repeat="advertisement in advertisements">
-                    	<img ng-if="advertisement.adMimeType.includes('image/')"class="img-responsive "  ng-src="{{advertisement.adUrl}}" id="{{advertisement.adId}}"
+
+
+                    <!--div ng-if="advertisement.adMimeType==='video/youtube'"class="img-responsive "  id="{{advertisement.adId}}"  
+                         style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/-->
+                        <img ng-if="advertisement.adMimeType.includes('image/')"class="img-responsive "  ng-src="{{advertisement.adUrl}}" id="{{advertisement.adId}}"
                                  style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>
                 </div>
             </div>
@@ -101,17 +105,17 @@
 
                 <div class="table-responsive container" style="margin-top:1px;">
 
-                    <table id="myTable" width="100%" cellpadding="0" class=" table table-bordered" style="font-size:30px; width: 100%;">
+                    <table cellpadding="0" class=" table table-bordered" style="font-size:36px;">
 
                         <thead>
 
                             <tr style="background-color:#7EB6FF;">
-                                <th style="text-align:center" class="shrink"><b>S.No.</b></th>
-                                <th style="text-align:center" class="expand"><b>Name</b></th>
-                                <th style="text-align:center" class="shrink"><b>Token</b> No.</th>
-                                <th style="text-align:center" class="shrink"><b>Appt-Time</b></th>
-                                <th style="text-align:center" class="shrink"><b>In-time</b></th>
-                                <th style="text-align:center" class="shrink">Type</th>
+                                <th style="text-align:center"><b>S.No.</b></th>
+                                <th style="text-align:center"><b>Name</b></th>
+                                <th style="text-align:center"><b>Token</b> No.</th>
+                                <th style="text-align:center"><b>Appt-Time</b></th>
+                                <th style="text-align:center"><b>In-time</b></th>
+                                <th style="text-align:center">Type</th>
                             </tr>
 
                         </thead>
@@ -119,20 +123,20 @@
 
                         <tr ng-repeat="appointment in patientQueue"
                             ng-class="{'selected':(appointment.patientid === doctor.body.queue[0].patientid && isTrue)}">
-                            <td align="center" class="shrink"><b>{{startIndex+$index+1}}</b></td>
-                            <td align="center" class="expand"><b>{{appointment.patientName}}</b></td>
-                            <td align="center" ng-if="appointment.token > 0" class="shrink"><b>{{appointment.token}} </b></td>
-                            <td align="center" ng-if="appointment.token === 0" class="shrink"> -</td>
+                            <td align="center"><b>{{startIndex+$index+1}}</b></td>
+                            <td align="center"><b>{{appointment.patientName}}</b></td>
+                            <td align="center" ng-if="appointment.token > 0"><b>{{appointment.token}} </b></td>
+                            <td align="center" ng-if="appointment.token === 0"> -</td>
 
-                            <td align="center" ng-if="appointment.typeOfEntry ===fromChekinQ" class="shrink"><b>{{
+                            <td align="center" ng-if="appointment.typeOfEntry ===fromChekinQ"><b>{{
                                 appointment.entrySlotTime*1000 | date:'shortTime':'+0530' }}</b></td>
-                            <td align="center" ng-if="appointment.typeOfEntry ===fromWalkinQ " class="shrink"><b>NA</b></td>
+                            <td align="center" ng-if="appointment.typeOfEntry ===fromWalkinQ "><b>NA</b></td>
 
-                            <td align="center" class="shrink"><b>{{appointment.timeOfEntry | date:'shortTime' :'':'+0530'}}</b></td>
-                            <td ng-if="appointment.typeOfEntry === fromChekinQ" style="text-align:center !important;vertical-align:middle !important;" class="shrink">
+                            <td align="center"><b>{{appointment.timeOfEntry | date:'shortTime' :'':'+0530'}}</b></td>
+                            <td ng-if="appointment.typeOfEntry === fromChekinQ" style="text-align:center !important;vertical-align:middle !important;">
                                 <img class="img-thumbnail text-center" style="display: block !important; margin-left: auto !important;margin-right: auto!important;" src="./images/appointment.png"/>
                             </td>
-                            <td ng-if="appointment.typeOfEntry ===fromWalkinQ" style="text-align:center;vertical-align:middle !important;" class="shrink">
+                            <td ng-if="appointment.typeOfEntry ===fromWalkinQ" style="text-align:center;vertical-align:middle !important;">
                                 <img class="img-thumbnail text-center" style="display: block !important;margin-left: auto !important ;  text-align:center !important;vertical-align:middle;margin-right: auto!important;" src="./images/walkin.png"/>
                             </td>
                         </tr>
@@ -162,28 +166,4 @@
             </div>
 
         </div>
-		
-				<script>				 
-				var tableRows = document.getElementById('myTable').rows;
-				maxLength = 9;
-				mmaxLength= 20;				
-
-				 for(var i = 0; i<tableRows.length;i++)
-					{
-					var rowCells = tableRows[i].cells;
-					for(var a = 0; a<rowCells.length;a++)
-						{						
-						if(rowCells[a].innerText.length > maxLength)
-							{
-							rowCells[a].style.fontSize = "15px";
-							rowCells[a].style.overflow = "hidden";
-							}
-						if(rowCells[a].innerText.length > mmaxLength)
-							{
-							rowCells[a].style.fontSize = "15px";
-							rowCells[a].style.wordWrap = "normal";
-							rowCells[a].style.overflow = "hidden";
-							}					
-						}						
-					}				
-				</script>
+</div>

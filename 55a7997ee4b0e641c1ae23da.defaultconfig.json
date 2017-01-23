@@ -11,7 +11,7 @@
         "adId": "QORQL_AD_1",
         "adPriority": "LOW",
         "adName": "QORQL_AD_1",
-        "adUrl": "images/qorql-ads-01.png",
+        "adUrl": "images/qorql-ads-01.gif",
         "adMimeType": "image/png",
         "adTime": 10,
         "adCount": "Infinity",
@@ -32,8 +32,7 @@
             "lastDisplayed": 0,
             "show_ad":true,
             "showticker": false
-        }
-,
+        },
        {
             "adId": "Sana_JAin_AD_4",
             "adPriority": "LOW",
@@ -52,6 +51,19 @@
         "adPriority": "LOW",
         "adName": "AGARWAL_CLINIC_AD_1",
         "adUrl": "images/agarwal-clinic-ad-01.png",
+        "adMimeType": "image/png",
+        "adTime": 10,
+        "adCount": "Infinity",
+        "adIntervel": 0,
+        "lastDisplayed": 0,
+        "show_ad":true,
+        "showticker": true
+    },
+    {
+        "adId": "AGARWAL_CLINIC_AD_6",
+        "adPriority": "LOW",
+        "adName": "AGARWAL_CLINIC_AD_6",
+        "adUrl": "images/AgarwalClinic_Ritupurnadas.png",
         "adMimeType": "image/png",
         "adTime": 10,
         "adCount": "Infinity",
@@ -114,19 +126,7 @@
         "show_ad":true,
         "showticker": false
     },
-    {
-      "adId": "QORQL_AD_5",
-      "adPriority": "LOW",
-      "adName": "QORQL_AD_5",
-      "adUrl": "images/dengue_ad.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
+    
     {
         "adId": "QORQL_AD_2",
         "adPriority": "LOW",
@@ -183,8 +183,8 @@
             "adId": "QORQL_AD_4",
             "adPriority": "LOW",
             "adName": "QORQL_AD_4",
-            "adUrl": "images/qorql-ads-04.png",
-            "adMimeType": "image/png",
+            "adUrl": "images/qorql_Ad_Agarwal_Clinic.gif",
+            "adMimeType": "image/gif",
             "adTime": 10,
             "adCount": "Infinity",
             "adIntervel": 0,

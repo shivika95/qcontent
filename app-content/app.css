@@ -74,24 +74,9 @@ body{
   color: #ffffff !important;
  }   
 
- table{
-	border: 1px solid black !important;
-	table-layout: fixed;
-	}
-
-td,th{
+table, th, td {
     border: 1px solid black !important;
 }
-
-table td.shrink {
-    white-space:nowrap;
-	
-}
-table td.expand {
-    width: 65%;
-	white-space:nowrap;
-}
-
 .navbar>.container .navbar-centered, 
 .navbar>.navbar-centered {
       

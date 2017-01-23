@@ -11,7 +11,7 @@
       "adId": "QORQL_AD_1",
       "adPriority": "LOW",
       "adName": "QORQL_AD_1",
-      "adUrl": "images/qorql-ads-01.png",
+      "adUrl": "images/qorql-ads-01.gif",
       "adMimeType": "image/png",
       "adTime": 10,
       "adCount": "Infinity",
@@ -33,19 +33,6 @@
             "show_ad":true,
             "showticker": true
         },
-{
-      "adId": "QORQL_AD_5",
-      "adPriority": "LOW",
-      "adName": "QORQL_AD_5",
-      "adUrl": "images/dengue_ad.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
 
     {
       "adId": "LOCAL_TRIBE_AD_1",

@@ -48,26 +48,12 @@
       "show_ad":true,
       "showticker": true
     },
-
-    {
-      "adId": "QORQL_AD_5",
-      "adPriority": "LOW",
-      "adName": "QORQL_AD_5",
-      "adUrl": "images/dengue_ad.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
     {
       "adId": "RAHUL_CLINIC_AD_YOGA_3",
       "adPriority": "LOW",
       "adName": "RAHUL_CLINIC_AD_YOGA_3",
-      "adUrl": "images/yoga-ad-rahul-clinc.gif",
-      "adMimeType": "image/gif",
+      "adUrl": "images/yoga_ad_01.png",
+      "adMimeType": "image/png",
       "adTime": 10,
       "adCount": "Infinity",
       "adIntervel": 900,

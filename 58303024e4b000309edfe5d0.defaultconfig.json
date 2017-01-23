@@ -22,20 +22,6 @@
       "show_ad":true,
       "showticker": false
     }
-    //,
-   //  {
-   //   "adId": "Ent_Clinic_AD_2",
-    //  "adPriority": "LOW",
-    //  "adName": "Ent_Clinic_AD_2",
-    //  "adUrl": "images/glamer_ajay_agarwal.png",
-    //  "adMimeType": "image/png",
-    //  "adTime": 10,
-    //  "adCount": "Infinity",
-    //  "adIntervel": 0,
-    ///  "lastDisplayed": 0,
-    //  "show_ad":true,
-    //  "showticker": false
-  //  }
   
     
   ],

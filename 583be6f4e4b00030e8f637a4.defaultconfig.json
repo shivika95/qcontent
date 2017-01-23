@@ -8,27 +8,21 @@
   "flash-color": "#0092cb",
   "defaultads": [
 
-     
-   
 
-
-   //{
-    // "adId": "Pk_Sharma_AD_1",
-    //  "adPriority": "LOW",
-    //  "adName": "Pk_Sharma_AD_1",
-    //  "adUrl": "",
-    //  "adMimeType": "image/png",
-    //  "adTime": 10,
-    //  "adCount": "Infinity",
-     // "adIntervel": 0,
-     // "lastDisplayed": 0,
-     // "show_ad":true,
-    //  "showticker": false 
-    //}
-  
-    
-
-    
+{
+     "adId": "Pk_Sharma_AD_1",
+      "adPriority": "LOW",
+    "adName": "Pk_Sharma_AD_1",
+      "adUrl": "Pk_Sharma_AD_01.png",
+      "adMimeType": "image/png",
+      "adTime": 10,
+     "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false 
+}
+       
   ],
   "knowndoctors": [
     {

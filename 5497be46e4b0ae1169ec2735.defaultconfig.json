@@ -8,30 +8,19 @@
   "flash-color": "#0092cb",
   "defaultads": [
     {
-      "adId": "QORQL_AD_1",
+      "adId": "Vandhana_clinic_video_ad_1",
       "adPriority": "LOW",
-      "adName": "QORQL_AD_1",
-      "adUrl": "images/qorql-ads-01.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
+      "adName": "Vandhana_clinic_video_ad_1",
+      "adUrl": "qNJgUQ0pdwg",
+      "adMimeType": "video/youtube",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 128,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
       "show_ad":true,
-      "showticker": true
-    },
-    {
-      "adId": "AGARWAL_CLINIC_AD_1",
-      "adPriority": "LOW",
-      "adName": "AGARWAL_CLINIC_AD_1",
-      "adUrl": "images/agarwal-clinic-ad-01.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": true
+      "showticker": false
     },
     {
       "adId": "LOCAL_TRIBE_AD_1",
@@ -55,19 +44,6 @@
       "adTime": 10,
       "adCount": "Infinity",
       "adIntervel": 900,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    },
-    {
-      "adId": "QORQL_AD_2",
-      "adPriority": "LOW",
-      "adName": "QORQL_AD_2",
-      "adUrl": "images/qorql-ads-02.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
-      "adCount": "Infinity",
-      "adIntervel": 0,
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
@@ -102,7 +78,7 @@
       "adId": "QORQL_AD_3",
       "adPriority": "LOW",
       "adName": "QORQL_AD_3",
-      "adUrl": "images/qorql-ads-03.png",
+      "adUrl": "images/qorql-ads-03.gif",
       "adMimeType": "image/png",
       "adTime": 10,
       "adCount": "Infinity",
@@ -123,20 +99,8 @@
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": true
-    },
-    {
-      "adId": "QORQL_AD_5",
-      "adPriority": "LOW",
-      "adName": "QORQL_AD_5",
-      "adUrl": "images/dengue_ad.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
     }
+    
   ],
   "knowndoctors": [
     {
