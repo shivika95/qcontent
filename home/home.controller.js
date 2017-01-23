@@ -824,7 +824,7 @@ var app = angular.module('app')
             });
 
         }
-    ])
+    )
 
     ///receiver code ............................
     .service('CastReceiver', function () {
