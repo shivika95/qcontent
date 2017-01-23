@@ -23,13 +23,13 @@
       "showticker": false
     },
    
-   {
-      "adId": "QORQL_AD_3",
+    {
+      "adId": "Rathi_Hospital_AD_1",
       "adPriority": "LOW",
-      "adName": "QORQL_AD_3",
-      "adUrl": "images/dr_asha_rathi.gif",
+      "adName": "Rathi_Hospital_AD_1",
+      "adUrl": "images/Asha_rathi_Add1.gif",
       "adMimeType": "image/gif",
-      "adTime": 22,
+      "adTime": 30,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
@@ -37,18 +37,20 @@
       "showticker": false
     },
     {
-      "adId": "Rathi_Hospital_AD_1",
+      "adId": "VIDEO_TEST_2",
       "adPriority": "LOW",
-      "adName": "Rathi_Hospital_AD_1",
-      "adUrl": "images/Asha_rathi_Add1.gif",
-      "adMimeType": "image/gif",
-      "adTime": 25,
+      "adName": "VIDEO_TEST_2",
+      "adUrl": "cMXdli7GmjA",
+      "adMimeType": "video/youtube",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 24,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
       "show_ad":true,
-      "showticker": false
-    },
+      "showticker": false }
+    ,
     {
       "adId": "VIDEO_TEST_3",
       "adPriority": "LOW",
