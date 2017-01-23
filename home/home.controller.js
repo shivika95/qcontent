@@ -163,10 +163,7 @@ var app = angular.module('app')
 
 
             function playbreakingnewssound() {
-		$timeout(function(){
-			audio.playInLoop("sounds/rail.mp3");
-		},1000)
-                
+		audio.playInLoop("sounds/rail.mp3");
                 $timeout(function () {
                     audio.stop();
                 }, 5000);
@@ -730,6 +727,7 @@ var app = angular.module('app')
             }
         function onPlayerReady(event) {
             $scope.youtube_advertisement_player.player=event.target
+	    $scope.youtube_advertisement_player.player.mute()
             
         }
         function onPlayerStateChange(event) {
