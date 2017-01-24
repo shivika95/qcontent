@@ -748,7 +748,7 @@ var app = angular.module('app')
             }
         function onPlayerReady(event) {
             $scope.youtube_advertisement_player.player=event.target
-		if(youtube_advertisement_player.show && document.getElementById("#youtube_advertisement_player"))){
+		if(youtube_advertisement_player.show && document.getElementById("#youtube_advertisement_player")){
 			event.target.playVideo()
 		}
 	    
