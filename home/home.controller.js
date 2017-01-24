@@ -444,10 +444,10 @@ var app = angular.module('app')
                 //var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
                  $scope.youtube_advertisement_player.show = false;
                 if($scope.youtube_advertisement_player.player){
-                    $scope.youtube_advertisement_player.player.pauseVideo()
-                    $scope.youtube_advertisement_player.player.seekTo(0)
+                    //$scope.youtube_advertisement_player.player.pauseVideo()
+                    //$scope.youtube_advertisement_player.player.seekTo(0)
 		    //$scope.youtube_advertisement_player.player.a.src=undefined
-		    //$scope.youtube_advertisement_player.player.stopVideo()
+		    $scope.youtube_advertisement_player.player.stopVideo()
 		    document.getElementById("youtube_advertisement_player").setAttribute("src",undefined)
                 }
         }
