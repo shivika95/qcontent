@@ -163,11 +163,12 @@ var app = angular.module('app')
 
 
             function playbreakingnewssound() {
-		audio.playInLoop("sounds/rail.mp3");
+		/*audio.playInLoop("sounds/rail.mp3");
                 $timeout(function () {
                     audio.stop();
-		    audio.audioElement.remove()
-                }, 5000);
+                }, 5000);*/
+		var localaudioelement=document.createElement('audio')
+		localaudioelement.setAttribute("src", "sounds/rail.mp3");
             }
 
             /////////////Breaking news player End ////////////////////////////////
