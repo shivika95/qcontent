@@ -53,7 +53,7 @@ var app = angular.module('app')
         var player=new YT.Player( "youtube_advertisement_player",{
                                     events:{
                                         'onReady':onPlayerReady,
-                                        'onStateChange':onPlayerStateChange
+                                        'onStateChange':onPlayerStateChange,
 					'videoId': videoid
                                         },
                                     playerVars: {rel: 0}
