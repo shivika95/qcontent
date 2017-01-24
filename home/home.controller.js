@@ -38,6 +38,7 @@ var app = angular.module('app')
         },
         show:false
         }
+	var temp_src="";
         $scope.clock = "loading clock..."; // initialise the time variable
                 $scope.tickInterval = 1000 //ms
 
@@ -163,7 +164,7 @@ var app = angular.module('app')
 
 
             function playbreakingnewssound() {
-		var temp_src=document.getElementById("youtube_advertisement_player").src
+		temp_src=document.getElementById("youtube_advertisement_player").src
 		document.getElementById("youtube_advertisement_player").removeAttribute("src")
 		audio.playInLoop("sounds/rail.mp3");
                 $timeout(function (temp_src) {
