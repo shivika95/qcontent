@@ -542,7 +542,7 @@ var app = angular.module('app')
                 }
 
                 else {
-			console.log($("#youtube_advertisement_player"))
+			console.log(document.getElementById("youtube_advertisement_player"))
 			if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $("#youtube_advertisement_player") === undefined){
 				//playing for the first time
 				console.log('found a youtube video')
