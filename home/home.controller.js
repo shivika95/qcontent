@@ -552,7 +552,7 @@ var app = angular.module('app')
             }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player){
                 console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
                 console.log("player status : "+$scope.youtube_advertisement_player.player.getPlayerState())
-                
+                console.log("player src is : "+$scope.youtube_advertisement_player.a.src)
                 if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED || $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.CUED || !($scope.youtube_advertisement_player.advertisement.adId === $scope.advertisements[currentIndexForAd].adId) || $scope.youtube_advertisement_player.player.getPlayerState() === undefined || $scope.youtube_advertisement_player.player.a.src === undefined  ){
                     $scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
                     $scope.advertisements[currentIndexForAd].adUrl.toString(),0,"large")
