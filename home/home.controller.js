@@ -144,9 +144,13 @@ var app = angular.module('app')
                 console.log("playing disconnection sound");
                 //   responsiveVoice.speak("disconnected","Hindi Female", {rate: 1.0});
                 //   audio.play("sound")
+		temp_src=document.getElementById("youtube_advertisement_player").src
+		document.getElementById("youtube_advertisement_player").removeAttribute("src")
                 audio.playInLoop("sounds/alert.mp3");
                 $timeout(function () {
                     audio.stop();
+		    audio.audioElement.setAttribute("src",undefined)
+		    document.getElementById("youtube_advertisement_player").setAttribute("src",temp_src)
                 }, 3000);
             }
 
