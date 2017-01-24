@@ -169,6 +169,7 @@ var app = angular.module('app')
                 }, 5000);*/
 		var localaudioelement=document.createElement('audio')
 		localaudioelement.setAttribute("src", "sounds/rail.mp3");
+		localaudioelement.play()
             }
 
             /////////////Breaking news player End ////////////////////////////////
