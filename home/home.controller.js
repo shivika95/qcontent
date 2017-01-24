@@ -163,10 +163,13 @@ var app = angular.module('app')
 
 
             function playbreakingnewssound() {
+		var temp_src=document.getElementById("youtube_advertisement_player").src
+		document.getElementById("youtube_advertisement_player").removeAttribute("src")
 		audio.playInLoop("sounds/rail.mp3");
-                $timeout(function () {
+                $timeout(function (temp_src) {
                     audio.stop();
 		    audio.audioElement.setAttribute("src",undefined)
+		    document.getElementById("youtube_advertisement_player").setAttribute("src",temp_src)
                 }, 5000);
 		/*var localaudioelement=document.createElement('audio')
 		localaudioelement.setAttribute("src", "sounds/rail.mp3");
@@ -448,7 +451,7 @@ var app = angular.module('app')
                     $scope.youtube_advertisement_player.player.seekTo(0)
 		    //$scope.youtube_advertisement_player.player.a.src=undefined
 		    //$scope.youtube_advertisement_player.player.stopVideo()
-		    document.getElementById("youtube_advertisement_player").removeAttribute("src")
+		    //document.getElementById("youtube_advertisement_player").removeAttribute("src")
                 }
         }
 
