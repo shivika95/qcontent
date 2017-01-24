@@ -22,6 +22,21 @@
       "show_ad":true,
       "showticker": false
     },
+    {
+      "adId": "Vandhana_clinic_video_ad_1",
+      "adPriority": "LOW",
+      "adName": "Vandhana_clinic_video_ad_1",
+      "adUrl": "qNJgUQ0pdwg",
+      "adMimeType": "video/youtube",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 128,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+    },
     
    
     {
