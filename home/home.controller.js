@@ -575,7 +575,7 @@ var app = angular.module('app')
                 
                
                 $scope.youtube_advertisement_player.show=true
-            }
+            
                     $scope.docVisible = false;
                     $scope.flashVisible = false;
                     $scope.advVisible = true;
