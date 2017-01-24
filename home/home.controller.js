@@ -446,7 +446,7 @@ var app = angular.module('app')
                 if($scope.youtube_advertisement_player.player){
                     $scope.youtube_advertisement_player.player.pauseVideo()
                     $scope.youtube_advertisement_player.player.seekTo(0)
-		    $scope.youtube_advertisement_player.player.a."src"=undefined
+		    $scope.youtube_advertisement_player.player.a.src=undefined
                 }
         }
 
