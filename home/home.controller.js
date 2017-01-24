@@ -167,7 +167,7 @@ var app = angular.module('app')
 		temp_src=document.getElementById("youtube_advertisement_player").src
 		document.getElementById("youtube_advertisement_player").removeAttribute("src")
 		audio.playInLoop("sounds/rail.mp3");
-                $timeout(function (temp_src) {
+                $timeout(function () {
                     audio.stop();
 		    audio.audioElement.setAttribute("src",undefined)
 		    document.getElementById("youtube_advertisement_player").setAttribute("src",temp_src)
