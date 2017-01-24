@@ -546,7 +546,7 @@ var app = angular.module('app')
 			if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && document.getElementById("youtube_advertisement_player") == null){
 				//playing for the first time
 				console.log('found a youtube video')
-				document.getElementById("youtube_container").append('<div  id="youtube_advertisement_player"  style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>');
+				$("#youtube_container").append('<div  id="youtube_advertisement_player"  style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>');
 				var player=$scope.getYouTubePlayerInstance($scope.advertisements[currentIndexForAd].adUrl.toString())
 			}
 			else if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && document.getElementById("youtube_advertisement_player")&& $scope.youtube_advertisement_player.player){
