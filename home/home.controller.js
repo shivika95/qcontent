@@ -448,7 +448,7 @@ var app = angular.module('app')
                     $scope.youtube_advertisement_player.player.seekTo(0)
 		    //$scope.youtube_advertisement_player.player.a.src=undefined
 		    //$scope.youtube_advertisement_player.player.stopVideo()
-		    document.getElementById("youtube_advertisement_player").setAttribute("src",undefined)
+		    document.getElementById("youtube_advertisement_player").removeAttribute("src")
                 }
         }
 
