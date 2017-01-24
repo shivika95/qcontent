@@ -548,7 +548,7 @@ var app = angular.module('app')
 				$('#youtube_container').append('<div  id="youtube_advertisement_player"  style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>');
 				var player=$scope.getYouTubePlayerInstance($scope.advertisements[currentIndexForAd].adUrl.toString())
 			}
-			else ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $("#youtube_advertisement_player")&& $scope.youtube_advertisement_player.player){
+			else if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $("#youtube_advertisement_player")&& $scope.youtube_advertisement_player.player){
 				$scope.youtube_advertisement_player.player.playVideo()
 			}
 			
