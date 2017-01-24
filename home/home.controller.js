@@ -163,13 +163,14 @@ var app = angular.module('app')
 
 
             function playbreakingnewssound() {
-		/*audio.playInLoop("sounds/rail.mp3");
+		audio.playInLoop("sounds/rail.mp3");
                 $timeout(function () {
                     audio.stop();
-                }, 5000);*/
-		var localaudioelement=document.createElement('audio')
+		    audio.setAttribute("src",undefined)
+                }, 5000);
+		/*var localaudioelement=document.createElement('audio')
 		localaudioelement.setAttribute("src", "sounds/rail.mp3");
-		localaudioelement.play()
+		localaudioelement.play()*/
             }
 
             /////////////Breaking news player End ////////////////////////////////
