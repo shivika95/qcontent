@@ -49,11 +49,12 @@ var app = angular.module('app')
                 // Start the timer
                 $timeout(tick, $scope.tickInterval);
             
-        $scope.getYouTubePlayerInstance=function(){
+        $scope.getYouTubePlayerInstance=function(videoid){
         var player=new YT.Player( "youtube_advertisement_player",{
                                     events:{
                                         'onReady':onPlayerReady,
                                         'onStateChange':onPlayerStateChange
+					'videoId': videoid
                                         },
                                     playerVars: {rel: 0}
                                 })
@@ -443,13 +444,14 @@ var app = angular.module('app')
                 //console.log(document)
                 //var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
                  $scope.youtube_advertisement_player.show = false;
-                if($scope.youtube_advertisement_player.player){
+		$("#youtube_advertisement_player").remove()
+                /*if($scope.youtube_advertisement_player.player){
                     $scope.youtube_advertisement_player.player.pauseVideo()
                     $scope.youtube_advertisement_player.player.seekTo(0)
 		    //$scope.youtube_advertisement_player.player.a.src=undefined
 		    //$scope.youtube_advertisement_player.player.stopVideo()
 		    document.getElementById("youtube_advertisement_player").removeAttribute("src")
-                }
+                }*/
         }
 
                
@@ -540,27 +542,36 @@ var app = angular.module('app')
                 }
 
                 else {
-            if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player === undefined){
-                console.log('found a youtube video')
-                console.log(document)
-               
-                var player=$scope.getYouTubePlayerInstance()
-                nextAd();
-                            showAdv();
-                            return;
+			if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $("#youtube_advertisement_player") === undefined){
+				//playing for the first time
+				console.log('found a youtube video')
+				$('#youtube_container').append('<div  id="youtube_advertisement_player"  style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>');
+				var player=$scope.getYouTubePlayerInstance($scope.advertisements[currentIndexForAd].adUrl.toString())
+			}
+			else ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $("#youtube_advertisement_player")&& $scope.youtube_advertisement_player.player){
+				$scope.youtube_advertisement_player.player.playVideo()
+			}
+			
+            		/*if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player === undefined){
+                		console.log('found a youtube video')
+                		console.log(document)       
+                		var player=$scope.getYouTubePlayerInstance()
+                		nextAd();
+                            	showAdv();
+                            	return;
                 
-            }else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player){
-                console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
-                console.log("player status : "+$scope.youtube_advertisement_player.player.getPlayerState())
-                console.log("player src is : "+document.getElementById("youtube_advertisement_player").src)
-                if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED || $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.CUED || !($scope.youtube_advertisement_player.advertisement.adId === $scope.advertisements[currentIndexForAd].adId) || $scope.youtube_advertisement_player.player.getPlayerState() === undefined || document.getElementById("youtube_advertisement_player").src === undefined || document.getElementById("youtube_advertisement_player").src === "" ){
+            		}else if ($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $scope.youtube_advertisement_player.player){
+                		console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
+                		console.log("player status : "+$scope.youtube_advertisement_player.player.getPlayerState())
+                		console.log("player src is : "+document.getElementById("youtube_advertisement_player").src)
+                		if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED || $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.CUED || !($scope.youtube_advertisement_player.advertisement.adId === $scope.advertisements[currentIndexForAd].adId) || $scope.youtube_advertisement_player.player.getPlayerState() === undefined || document.getElementById("youtube_advertisement_player").src === undefined || document.getElementById("youtube_advertisement_player").src === "" ){
                     $scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
                     $scope.advertisements[currentIndexForAd].adUrl.toString(),0,"large")
                     $scope.youtube_advertisement_player.advertisement=$scope.advertisements[currentIndexForAd]
                 }else {
                     $scope.youtube_advertisement_player.player.playVideo()
                     $scope.youtube_advertisement_player.advertisement=$scope.advertisements[currentIndexForAd]
-                }
+                }*/
                 
                
                 $scope.youtube_advertisement_player.show=true
@@ -734,6 +745,10 @@ var app = angular.module('app')
             }
         function onPlayerReady(event) {
             $scope.youtube_advertisement_player.player=event.target
+		if(youtube_advertisement_player.show && $("#youtube_advertisement_player")){
+			event.target.playVideo()
+		}
+	    
 	    
             
         }
