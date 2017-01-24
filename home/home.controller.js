@@ -444,7 +444,7 @@ var app = angular.module('app')
                 //console.log(document)
                 //var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
                  $scope.youtube_advertisement_player.show = false;
-		$("#youtube_advertisement_player").remove()
+		document.getElementById("youtube_advertisement_player").remove()
                 /*if($scope.youtube_advertisement_player.player){
                     $scope.youtube_advertisement_player.player.pauseVideo()
                     $scope.youtube_advertisement_player.player.seekTo(0)
@@ -542,14 +542,14 @@ var app = angular.module('app')
                 }
 
                 else {
-			console.log(document.getElementById("youtube_advertisement_player"))
-			if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $("#youtube_advertisement_player") === undefined){
+			//console.log(document.getElementById("youtube_advertisement_player"))
+			if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && document.getElementById("youtube_advertisement_player") == null){
 				//playing for the first time
 				console.log('found a youtube video')
-				$('#youtube_container').append('<div  id="youtube_advertisement_player"  style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>');
+				document.getElementById("youtube_container").append('<div  id="youtube_advertisement_player"  style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>');
 				var player=$scope.getYouTubePlayerInstance($scope.advertisements[currentIndexForAd].adUrl.toString())
 			}
-			else if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && $("#youtube_advertisement_player")&& $scope.youtube_advertisement_player.player){
+			else if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && document.getElementById("youtube_advertisement_player")&& $scope.youtube_advertisement_player.player){
 				$scope.youtube_advertisement_player.player.playVideo()
 			}
 			
