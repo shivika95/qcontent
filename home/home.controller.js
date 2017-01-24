@@ -60,7 +60,7 @@ var app = angular.module('app')
                                 })
         return player
         }
-        var player=$scope.getYouTubePlayerInstance()
+        //var player=$scope.getYouTubePlayerInstance()
             $scope.advertisement = {};
         $scope.state={
         "advertisement":false,
