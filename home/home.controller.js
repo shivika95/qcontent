@@ -547,9 +547,11 @@ var app = angular.module('app')
 				//playing for the first time
 				console.log('found a youtube video')
 				$("#youtube_container").append('<div  id="youtube_advertisement_player"  style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;"/>');
+				$scope.youtube_advertisement_player.show=true
 				var player=$scope.getYouTubePlayerInstance($scope.advertisements[currentIndexForAd].adUrl.toString())
 			}
 			else if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube" && document.getElementById("youtube_advertisement_player")&& $scope.youtube_advertisement_player.player){
+				$scope.youtube_advertisement_player.show=true
 				$scope.youtube_advertisement_player.player.playVideo()
 			}
 			
@@ -575,7 +577,7 @@ var app = angular.module('app')
                 }*/
                 
                
-                $scope.youtube_advertisement_player.show=true
+                
             
                     $scope.docVisible = false;
                     $scope.flashVisible = false;
@@ -746,7 +748,7 @@ var app = angular.module('app')
             }
         function onPlayerReady(event) {
             $scope.youtube_advertisement_player.player=event.target
-		if(youtube_advertisement_player.show && $("#youtube_advertisement_player")){
+		if(youtube_advertisement_player.show && document.getElementById("#youtube_advertisement_player"))){
 			event.target.playVideo()
 		}
 	    
