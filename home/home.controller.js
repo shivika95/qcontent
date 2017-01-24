@@ -166,6 +166,7 @@ var app = angular.module('app')
 		audio.playInLoop("sounds/rail.mp3");
                 $timeout(function () {
                     audio.stop();
+		    audio.audioElement.remove()
                 }, 5000);
             }
 
