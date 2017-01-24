@@ -444,10 +444,10 @@ var app = angular.module('app')
                 //var player=new YT.Player( $scope.advertisements[currentIndexForAd].adId,{events:{'onReady':onPlayerReady,'onStateChange':onPlayerStateChange}})
                  $scope.youtube_advertisement_player.show = false;
                 if($scope.youtube_advertisement_player.player){
-                    //$scope.youtube_advertisement_player.player.pauseVideo()
-                    //$scope.youtube_advertisement_player.player.seekTo(0)
+                    $scope.youtube_advertisement_player.player.pauseVideo()
+                    $scope.youtube_advertisement_player.player.seekTo(0)
 		    //$scope.youtube_advertisement_player.player.a.src=undefined
-		    $scope.youtube_advertisement_player.player.stopVideo()
+		    //$scope.youtube_advertisement_player.player.stopVideo()
 		    document.getElementById("youtube_advertisement_player").setAttribute("src",undefined)
                 }
         }
@@ -553,7 +553,7 @@ var app = angular.module('app')
                 console.log("type of adUrl: "+typeof($scope.advertisements[currentIndexForAd].adUrl))
                 console.log("player status : "+$scope.youtube_advertisement_player.player.getPlayerState())
                 
-                if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED || $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.CUED || !($scope.youtube_advertisement_player.advertisement.adId === $scope.advertisements[currentIndexForAd].adId) || $scope.youtube_advertisement_player.player.getPlayerState() === undefined  ){
+                if($scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.UNSTARTED ||  $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.ENDED || $scope.youtube_advertisement_player.player.getPlayerState()==YT.PlayerState.CUED || !($scope.youtube_advertisement_player.advertisement.adId === $scope.advertisements[currentIndexForAd].adId) || $scope.youtube_advertisement_player.player.getPlayerState() === undefined || $scope.youtube_advertisement_player.player.a.src === undefined  ){
                     $scope.youtube_advertisement_player.player=$scope.youtube_advertisement_player.player.loadVideoById(
                     $scope.advertisements[currentIndexForAd].adUrl.toString(),0,"large")
                     $scope.youtube_advertisement_player.advertisement=$scope.advertisements[currentIndexForAd]
