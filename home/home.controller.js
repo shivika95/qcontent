@@ -39,6 +39,7 @@ var app = angular.module('app')
         show:false
         }
 	var temp_src="";
+	var video_was_playing=false;
         $scope.clock = "loading clock..."; // initialise the time variable
                 $scope.tickInterval = 1000 //ms
 
@@ -446,6 +447,7 @@ var app = angular.module('app')
             function showDoc() {
 
                 $scope.advertisements[currentIndexForAd].show = false;
+		video_was_playing=false;
         if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube"){
                 //console.log('found a youtube video')
                 //console.log(document)
@@ -571,14 +573,16 @@ var app = angular.module('app')
                 
                
                 $scope.youtube_advertisement_player.show=true
-            }
+            }else{
                     $scope.docVisible = false;
                     $scope.flashVisible = false;
                     $scope.advVisible = true;
                     $scope.advertisements[currentIndexForAd].show = true;
                     $scope.advertisements[currentIndexForAd].lastDisplayed = curr_time_millis;
+		    video_was_playing=false;
+	     }
             
-                }
+           }
 
 
                 var clinicsforpost = [];
@@ -681,7 +685,6 @@ var app = angular.module('app')
                         else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
                             showDoc();
-
                         }
 
                         countDown();
@@ -705,8 +708,11 @@ var app = angular.module('app')
                 }
                 else {
                     $scope.flashBus = $scope.flashQueue[flashindex];
-                    if(!$scope.youtube_advertisement_player.show){
-                    	playbreakingnewssound();
+                    if($scope.youtube_advertisement_player.show){
+                    	video_was_playing=true
+		    }
+		    if(!video_was_playing){
+		    	playbreakingnewssound();
 		    }
 		    hideAllAds();
                     $timeout(function () {
