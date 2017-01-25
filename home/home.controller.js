@@ -499,7 +499,7 @@ var app = angular.module('app')
                 if ($scope.doctor) {
                     console.log("doctor disconnected " + $scope.doctor.is_disconnected);
                     if ($scope.doctor.body.is_disconnected == true) {
-                        playDisconnectionSound();
+                        //playDisconnectionSound();
                     }
                 }
             }
@@ -740,12 +740,12 @@ var app = angular.module('app')
                         showAdv();
                     }
         
-            else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
-                        prevIndex = 0;
-                        nextDoc();
-                        showDoc();
+            	    else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
+                        		prevIndex = 0;
+                        		nextDoc();
+                        		showDoc();
                     } else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
-                        $scope.counter = -1;
+                        		$scope.counter = -1;
                     }
                     $scope.counter += 1;
                     countDown();
