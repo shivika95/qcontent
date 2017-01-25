@@ -488,7 +488,7 @@ var app = angular.module('app')
 
                         }
                     } else {
-                        $scope.counter = 24;
+                        $scope.counter = ($scope.advertisement.adTime?$scope.advertisement.adTime+20:20);
                     }
                 }
 
@@ -744,7 +744,7 @@ var app = angular.module('app')
                         		prevIndex = 0;
                         		nextDoc();
                         		showDoc();
-                    } else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime+20:20)) {
+                    } else if ($scope.counter >= ($scope.advertisement.adTime?$scope.advertisement.adTime+20:20)) {
                         		$scope.counter = -1;
                     }
                     $scope.counter += 1;
