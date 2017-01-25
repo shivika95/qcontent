@@ -705,8 +705,10 @@ var app = angular.module('app')
                 }
                 else {
                     $scope.flashBus = $scope.flashQueue[flashindex];
-                    hideAllAds();
-                    playbreakingnewssound();
+                    if(!$scope.youtube_advertisement_player.show){
+                    	playbreakingnewssound();
+		    }
+		    hideAllAds();
                     $timeout(function () {
                         showFlash(++flashindex)
                     }, 6000);
