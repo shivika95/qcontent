@@ -36,6 +36,19 @@
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
+    },
+    {
+      "adId": "Women_Clinic_AD_2",
+      "adPriority": "LOW",
+      "adName": "Women_Clinic_AD_2",
+      "adUrl": "images/dr_vandana_banner_3.gif",
+      "adMimeType": "image/gif",
+      "adTime": 38,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
     }
     
     
