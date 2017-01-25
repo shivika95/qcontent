@@ -680,10 +680,12 @@ var app = angular.module('app')
 
 
                         if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
+			    video_was_playing=false
                             showAdv();
                         }
                         else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
+			    video_was_playing=false
                             showDoc();
                         }
 
@@ -695,11 +697,13 @@ var app = angular.module('app')
                     $scope.flashQueue = [];
                     $scope.insideflash = false;
                     $timeout(function () {
-                        if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10))
+                        if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10)){
+			    video_was_playing=false
                             showAdv();
-
+			}
                         else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
+			    video_was_playing=false
                             showDoc();
                         }
                         countDown();
@@ -709,7 +713,7 @@ var app = angular.module('app')
                 else {
                     $scope.flashBus = $scope.flashQueue[flashindex];
                     if($scope.youtube_advertisement_player.show || video_was_playing){
-                    	video_was_playing=true
+                    	video_was_playing=true;
 		    }
 		    if(!video_was_playing){
 		    	playbreakingnewssound();
