@@ -447,7 +447,7 @@ var app = angular.module('app')
             function showDoc() {
 
                 $scope.advertisements[currentIndexForAd].show = false;
-		video_was_playing=false;
+		
         if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube"){
                 //console.log('found a youtube video')
                 //console.log(document)
@@ -573,14 +573,14 @@ var app = angular.module('app')
                 
                
                 $scope.youtube_advertisement_player.show=true
-            }else{
+            }
                     $scope.docVisible = false;
                     $scope.flashVisible = false;
                     $scope.advVisible = true;
                     $scope.advertisements[currentIndexForAd].show = true;
                     $scope.advertisements[currentIndexForAd].lastDisplayed = curr_time_millis;
-		    video_was_playing=false;
-	     }
+		    
+	     
             
            }
 
@@ -680,10 +680,12 @@ var app = angular.module('app')
 
 
                         if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
+			    video_was_playing=false
                             showAdv();
                         }
                         else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
+			    video_was_playing=false
                             showDoc();
                         }
 
@@ -696,10 +698,12 @@ var app = angular.module('app')
                     $scope.insideflash = false;
                     $timeout(function () {
                         if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10))
+			    video_was_playing=false
                             showAdv();
 
                         else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
+			    video_was_playing=false
                             showDoc();
                         }
                         countDown();
@@ -708,8 +712,8 @@ var app = angular.module('app')
                 }
                 else {
                     $scope.flashBus = $scope.flashQueue[flashindex];
-                    if($scope.youtube_advertisement_player.show){
-                    	video_was_playing=true
+                    if($scope.youtube_advertisement_player.show || video_was_playing){
+                    	video_was_playing=true;
 		    }
 		    if(!video_was_playing){
 		    	playbreakingnewssound();
