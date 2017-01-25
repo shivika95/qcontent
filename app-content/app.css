@@ -5,6 +5,9 @@ body{
 	
 }
 
+.fontOfName{
+  font-size: 18px;
+}
 
 .selected{
   color: #0ee500;
