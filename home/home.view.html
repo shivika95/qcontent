@@ -121,6 +121,8 @@
                         <tr ng-repeat="appointment in patientQueue"
                             ng-class="{'selected':(appointment.patientid === doctor.body.queue[0].patientid && isTrue)}">
                             <td align="center"><b>{{startIndex+$index+1}}</b></td>
+
+
                             <td align="center" ><b ng-class="{'fontOfName':(appointment.patientName.length>15)}">{{appointment.patientName}}</b></td>
                             <td align="center" ng-if="appointment.token > 0"><b>{{appointment.token}} </b></td>
                             <td align="center" ng-if="appointment.token === 0"> -</td>
