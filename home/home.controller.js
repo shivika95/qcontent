@@ -511,7 +511,7 @@ var app = angular.module('app')
                 extraTimeout = $timeout(function () {
                     if (extra === 18) {
                         extra = 0;
-                        $scope.counter = 11;
+                        $scope.counter = ($scope.advertisement.adTime?$scope.advertisement.adTime:10) + 1 ;
                         showDoc();
                     }
                     else {
