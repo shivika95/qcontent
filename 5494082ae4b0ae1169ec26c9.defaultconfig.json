@@ -13,6 +13,38 @@
       "adId": "Vandhana_clinic_video_ad_1",
       "adPriority": "LOW",
       "adName": "Vandhana_clinic_video_ad_1",
+      "adUrl": "rFtTCLvkUCc",
+      "adMimeType": "video/youtube",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 51,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+     
+    },
+    {
+      "adId": "Vandhana_clinic_video_ad_1",
+      "adPriority": "LOW",
+      "adName": "Vandhana_clinic_video_ad_1",
+      "adUrl": "rFtTCLvkUCc",
+      "adMimeType": "video/youtube",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 51,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+     
+    },
+     {
+      "adId": "Vandhana_clinic_video_ad_2",
+      "adPriority": "LOW",
+      "adName": "Vandhana_clinic_video_ad_2",
       "adUrl": "qNJgUQ0pdwg",
       "adMimeType": "video/youtube",
       "adStartTime":0,
@@ -23,41 +55,24 @@
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
-    },
+     
+    }, 
     {
-
-      "adId": "Vandhana_clinic_video_ad_1",
+      "adId": "Vandhana_clinic_video_ad_3",
       "adPriority": "LOW",
-      "adName": "Vandhana_clinic_video_ad_1",
-      "adUrl": "KpY2loe1lTE",
+      "adName": "Vandhana_clinic_video_ad_3",
+      "adUrl": "zS9tef-PxNs",
       "adMimeType": "video/youtube",
       "adStartTime":0,
       "adEndTime":-1,
-      "adTime": 128,
+      "adTime": 131,
       "adCount": "Infinity",
       "adIntervel": 0,
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
-    
-    },
-    
-    {
-      "adId": "Women_Clinic_AD_1",
-      "adPriority": "LOW",
-      "adName": "Women_Clinic_AD_1",
-      "adUrl": "images/dr_vandana_banner_3.png",
-      "adMimeType": "image/png",
-      "adTime": 10,
-      "adCount": "Infinity",
-      "adIntervel": 0,
-      "lastDisplayed": 0,
-      "show_ad":true,
-      "showticker": false
-    
-    }
-  
-
+     
+    }  
     
   ],
   "knowndoctors": [
