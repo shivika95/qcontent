@@ -7,8 +7,66 @@
   "fontSize": 38,
   "flash-color": "#0092cb",
   "defaultads": [
-
-
+    {
+      "adId": "Vandhana_clinic_ad_3",
+      "adPriority": "LOW",
+      "adName": "Vandhana_clinic_ad_3",
+      "adUrl": "images/vandhana_Ad03.jpg",
+      "adMimeType": "image/jpg",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 10,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+    },
+    {
+      "adId": "Vandhana_clinic_ad_4",
+      "adPriority": "LOW",
+      "adName": "Vandhana_clinic_ad_4",
+      "adUrl": "images/vandhana_Ad04.png",
+      "adMimeType": "image/jpg",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 10,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+    },
+    {
+      "adId": "Vandhana_clinic_ad_6",
+      "adPriority": "LOW",
+      "adName": "Vandhana_clinic_ad_6",
+      "adUrl": "images/vandhana_Ad06.jpg",
+      "adMimeType": "image/jpg",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 10,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+    },
+    {
+      "adId": "Vandhana_clinic_ad_5",
+      "adPriority": "LOW",
+      "adName": "Vandhana_clinic_ad_5",
+      "adUrl": "images/vandhana_Ad05.jpg",
+      "adMimeType": "image/jpg",
+      "adStartTime":0,
+      "adEndTime":-1,
+      "adTime": 10,
+      "adCount": "Infinity",
+      "adIntervel": 0,
+      "lastDisplayed": 0,
+      "show_ad":true,
+      "showticker": false
+    },
     {
       "adId": "Vandhana_clinic_video_ad_1",
       "adPriority": "LOW",
