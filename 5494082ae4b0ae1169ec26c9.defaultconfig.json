@@ -8,7 +8,7 @@
   "flash-color": "#0092cb",
   "defaultads": [
 
-     
+
     {
       "adId": "Vandhana_clinic_video_ad_1",
       "adPriority": "LOW",
@@ -23,7 +23,7 @@
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
-     
+
     },
     {
       "adId": "Vandhana_clinic_video_ad_1",
@@ -39,7 +39,7 @@
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
-     
+
     },
      {
       "adId": "Vandhana_clinic_video_ad_2",
@@ -55,8 +55,8 @@
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
-     
-    }, 
+
+    },
     {
       "adId": "Vandhana_clinic_video_ad_3",
       "adPriority": "LOW",
@@ -71,9 +71,9 @@
       "lastDisplayed": 0,
       "show_ad":true,
       "showticker": false
-     
-    }  
-    
+
+    }
+
   ],
   "knowndoctors": [
     {
