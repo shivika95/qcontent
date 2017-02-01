@@ -220,11 +220,11 @@ rss-title a {
  list-style:none outside none;
  }
  
-.swing li {
-  /* opacity: 0; */
+ .swing li {
+  /* opacity: 0; 
   -webkit-transform: rotateY(-90deg);
   -webkit-transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
-}
+} 
 
 .swing li.rss-item {
   opacity: 1;
@@ -236,3 +236,4 @@ rss-title a {
   -webkit-transform: none;
   -webkit-transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 }
+*/
