@@ -195,7 +195,7 @@ rss-title a {
 }
 
 .feed ul li {
-  display: none;
+/*display: none;*/
 }
 
 .rss-item a:link, .rss-item a:visited, .rss-item a:active {
