@@ -454,6 +454,7 @@ var app = angular.module('app')
 				$scope.advVisible = false;
 				$scope.flashVisible= false;
 				$scope.advertisements[currentIndexForAd].show = false;
+				hideAllAds();
 				$scope.newsVisible= true;				
 			}
 
@@ -791,7 +792,8 @@ var app = angular.module('app')
             $scope.advertisements[i].adUrl=$sce.trustAsResourceUrl($scope.advertisements[i].adUrl)
             
                     if (i === 0)
-                        $scope.advertisements[i].show = true;
+                       // $scope.advertisements[i].show = true;
+							newsVisible= true;
                 }
                 nextAd();
                 //showAdv();
