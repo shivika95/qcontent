@@ -66,12 +66,15 @@ var app = angular.module('app')
         $scope.state={
         "advertisement":false,
         "queue":false,
-        "flash":false
+        "flash":false,
+		"news":false
         }
 
             $scope.doctors = [];
             $scope.doctor = {};
             $scope.docVisible = false;
+			
+			$scope.newsVisible = false;
 
             $scope.advVisible = false;
 
@@ -428,6 +431,7 @@ var app = angular.module('app')
             $scope.docVisible = false;
             $scope.advVisible = false;
             $scope.flashVisible = false;
+			$scope.newsVisible= false;
 
             $scope.patientQueue = [];
 
@@ -443,10 +447,20 @@ var app = angular.module('app')
         	}
 		$scope.youtube_advertisement_player.show=false
             }
+			
+			function showNews() {
+				
+				$scope.docVisible= false;
+				$scope.advVisible = false;
+				$scope.flashVisible= false;
+				$scope.advertisements[currentIndexForAd].show = false;
+				$scope.newsVisible= true;				
+			}
 
             function showDoc() {
 
                 $scope.advertisements[currentIndexForAd].show = false;
+				
 		
         if($scope.advertisements[currentIndexForAd].adMimeType==="video/youtube"){
                 //console.log('found a youtube video')
@@ -495,6 +509,7 @@ var app = angular.module('app')
 
                 $scope.advVisible = false;
                 $scope.flashVisible = false;
+				$scope.newsVisible= false;
                 $scope.docVisible = true;
                 if ($scope.doctor) {
                     console.log("doctor disconnected " + $scope.doctor.is_disconnected);
@@ -576,6 +591,7 @@ var app = angular.module('app')
             }
                     $scope.docVisible = false;
                     $scope.flashVisible = false;
+					$scope.newsVisible= false;
                     $scope.advVisible = true;
                     $scope.advertisements[currentIndexForAd].show = true;
                     $scope.advertisements[currentIndexForAd].lastDisplayed = curr_time_millis;
@@ -668,7 +684,9 @@ var app = angular.module('app')
 
                 $scope.docVisible = false;
                 $scope.advVisible = false;
+				$scope.newsVisible= false;
                 $scope.insideflash = true;
+				
                 $scope.flashVisible = true;
                 //playbreakingnewssound();
 
@@ -681,7 +699,8 @@ var app = angular.module('app')
 
                         if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
 			    video_was_playing=false
-                            showAdv();
+                            //showAdv();
+							showNews();
                         }
                         else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
@@ -699,7 +718,8 @@ var app = angular.module('app')
                     $timeout(function () {
                         if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime:10)){
 			    video_was_playing=false
-                            showAdv();
+                            //showAdv();
+							showNews();
 			}
                         else if ($scope.counter <= ($scope.advertisement.adTime?$scope.advertisement.adTime+30:30)) {
                             prevIndex = prevIndex_backup;
@@ -737,7 +757,8 @@ var app = angular.module('app')
                 stopped = $timeout(function () {
                     if ($scope.counter === 0) {
                         nextAd();
-                        showAdv();
+                        //showAdv();
+						showNews();
                     }
         
             	    else if ($scope.counter === ($scope.advertisement.adTime?$scope.advertisement.adTime:10)) {
@@ -773,7 +794,8 @@ var app = angular.module('app')
                         $scope.advertisements[i].show = true;
                 }
                 nextAd();
-                showAdv();
+                //showAdv();
+				showNews();
                 $scope.counter += 1;
                 countDown();
             });
