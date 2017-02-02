@@ -793,7 +793,7 @@ var app = angular.module('app')
             
                     if (i === 0)
                        // $scope.advertisements[i].show = true;
-							newsVisible= true;
+							showNews();
                 }
                 nextAd();
                 //showAdv();
